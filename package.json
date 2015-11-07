@@ -1,0 +1,108 @@
+{
+  "name": "px-mobile",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "bin/",
+    "dist/"
+  ],
+  "main": "src/index.js",
+  "jsnext:main": "./src/index.js",
+  "config": {
+    "dirs": [
+      "."
+    ],
+    "dist": "./dist",
+    "moduleType": [
+      "globals"
+    ],
+    "name": "pxMobile",
+    "port": 9393,
+    "proxy": {
+      "forward": {
+        "/_session": "http://localhost:59840",
+        "/cblite": "http://localhost:59840",
+        "/db": "http://127.0.0.1:5984",
+        "/default": "http://localhost:4985",
+        "/predixgo": "http://nginx-sync-gateway-admin.grc-apps.svc.ice.ge.com",
+        "/predixgo2": "http://localhost:4985"
+      }
+    },
+    "routes": [],
+    "src": "./src"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "babel": "babel $npm_package_config_dist/$npm_package_name.js --out-file $npm_package_config_dist/$npm_package_name.js --source-maps",
+    "browserify": "browserify --standalone $npm_package_name -e  src/index.js -t babelify -o dist/px-mobile.js",
+    "lint": "eslint src/** test",
+    "check": "npm run lint -s && dependency-check package.json --entry src",
+    "watch": "watch 'npm run build' src test",
+    "test2": "babel-node test/index.js | tspec",
+    "test": "mocha --compilers js:babel/register --recursive test/index.js",
+    "prebuild": "npm run check -s && npm run clean -s",
+    "build": "babel --optional runtime src -d dist",
+    "postbuild": "npm run test -s",
+    "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
+    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+    "postcoveralls": "rimraf ./coverage",
+    "prepublish": "npm run build -s",
+    "deploy": "git pull --rebase origin master && git push origin master",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "browserify:specs": "browserify test/index.js -o test/specs.js",
+    "postpublish": "git push origin master --follow-tags",
+    "toc": "doctoc --github --title \"# Changelog\" CHANGELOG.md"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify", {
+          "optional": [
+            "es7.asyncFunctions"
+          ]
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonniespratley/px-mobilejs.git"
+  },
+  "keywords": [
+    "px-mobile"
+  ],
+  "author": "Jonnie Spratley <jonnie.spratley@ge.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonniespratley/px-mobilejs/issues"
+  },
+  "homepage": "https://github.com/jonniespratley/px-mobilejs#readme",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-cli": "^6.1.2",
+    "babel-eslint": "^4.1.3",
+    "babel-runtime": "^5.8.24",
+    "babelify": "^6.1.3",
+    "blanket": "^1.1.7",
+    "browserify": "^11.0.1",
+    "browserify-css": "^0.7.1",
+    "browserify-jade": "^1.0.2",
+    "chai": "^3.4.0",
+    "coveralls": "*",
+    "dependency-check": "*",
+    "doctoc": "*",
+    "eslint": "*",
+    "isparta": "*",
+    "mocha": "^2.3.3",
+    "mocha-jsdom": "^1.0.0",
+    "rimraf": "*",
+    "tap-spec": "*",
+    "tape": "*",
+    "watch": "*"
+  },
+  "dependencies": {
+    "babel-runtime": "*"
+  }
+}

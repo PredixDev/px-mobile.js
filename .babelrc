@@ -1,0 +1,9 @@
+{
+  "sourceMaps": true,
+  "comments": false,
+
+  "ignore": [
+    "foo.js",
+    "bar/**/*.js"
+  ]
+}
