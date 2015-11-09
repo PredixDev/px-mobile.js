@@ -58,7 +58,8 @@
   "browserify": {
     "transform": [
       [
-        "babelify", {
+        "babelify",
+        {
           "optional": [
             "es7.asyncFunctions"
           ]
@@ -98,6 +99,7 @@
     "mocha": "^2.3.3",
     "mocha-jsdom": "^1.0.0",
     "rimraf": "*",
+    "sinon": "^1.17.2",
     "tap-spec": "*",
     "tape": "*",
     "watch": "*"

@@ -1,4 +1,6 @@
+require('../setup');
 var pxMobile = require('../../dist/px-mobile');
+
 
 /** @test {Router} */
 describe('pxMobile.Router', function() {

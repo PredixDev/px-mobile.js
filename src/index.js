@@ -1,6 +1,6 @@
 /*global require*/
 'use strict';
-require("babel-core/register");
+
 // TODO: Vendor
 //require('../vendor/overthrow/overthrow')
 //require('../../vendor/es6-shim')
@@ -96,8 +96,5 @@ var pxMobile = {
 	}
 };
 
-if (window && typeof window !== undefined) {
-	window.pxMobile = pxMobile;
-}
 
 export default pxMobile;

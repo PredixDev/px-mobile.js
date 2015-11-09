@@ -38,7 +38,7 @@ function PouchDbAdapter(name, options) {
 describe('pxMobile.DB', function() {
 
 
-  var DATABASE_URL = window.DATABASE_URL;
+  var DATABASE_URL = '/default';
   var TEST_IDS = [];
   var sandbox = sinon.sandbox;
   var db = null,
