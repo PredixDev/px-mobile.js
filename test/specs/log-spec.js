@@ -1,4 +1,3 @@
-var pxMobile = require('../../dist/px-mobile');
 /** @test {Logger} */
 describe('pxMobile.Logger', function() {
   it('should be defined', function() {

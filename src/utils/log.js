@@ -13,13 +13,8 @@ setInterval(function(){
   b('doing some work');
 }, 1200);
 */
-//pxMobile.debug = require('../../node_modules/debug/browser.js');
-
 /**
- * Logger class provides customized logging to the console.
- * pxdb:http GET http://127.0.0.1:5984/default/ +0ms
- * pxdb:api default +28ms id
- * pxdb:api default +1ms id success 9FA8E5B5-FA51-9A95-901E-E6DD8D6D4B90
+ * Logger class provides logging functionality.
  */
 export default class Logger {
 
@@ -29,23 +24,26 @@ export default class Logger {
 		var defaults = {
 			colors: {
 				trace: 'color:#7672E6;',
-				success: 'color:#288A29;',
-				info: 'color:#1F9A2D;',
-				warn: 'color:#9E9E23;',
+				success: 'color:#46AD00;',
+				info: 'color:#005CB9;',
+				warn: 'color:#FF9821;',
 				fatal: 'color:#C057BA;',
-				error: 'color:#FC121E;',
-				debug: 'color:#7672E6;'
+				error: 'color:#E32533;',
+				debug: 'color:#005CB9;'
 			}
 		};
 		this.colors = defaults.colors;
 		this.options = options;
+		this.debugEnabled = options.debugEnabled || true;
 		return this;
 	}
 
 	log(level, args) {
 		let timestamp = new Date().toLocaleString();
 		var log = (window.console) ? window.console.log.bind(window.console) : function() {};
-		log(`[${timestamp}] [${level}] [${this.category}]`, arguments);
+		if (this.debugEnabled) {
+			log(`[${timestamp}] [${level}] [${this.category}]`, arguments);
+		}
 	}
 
 	debug(args) {
@@ -70,6 +68,7 @@ export default class Logger {
 		logger.logApi('someMethod', {}, false);
 	 * @param {String} method - The name of the method.
 	 * @param {Object} params - The params to log.
+	 * @param {Boolean} success - If the call is successfull
 	 */
 	logApi(method, params, success) {
 		if (!params) {
@@ -87,12 +86,17 @@ export default class Logger {
 		logger.logHttp('PUT', '/default', false);
 	 * @param {String} method - The name of the method.
 	 * @param {Object} params - The params to log.
+	 * @param {Boolean} success - If the call is successfull
 	 */
 	logHttp(method, url, success) {
 		console.log('%c[%s:http] %c%s %c%o', (success ? this.colors.success : this.colors.info), this.category,
 			null, method, null, url);
 	}
 
+	/**
+	 * Log a timestamp to the console.
+	 * @param {String} name - The name of the timed log.
+	 */
 	logTime(name) {
 		var start = new Date();
 		return {

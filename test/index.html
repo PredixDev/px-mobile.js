@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>px-mobile Unit Tests</title>
+<!--
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../config.js"></script>
+
+    <script>
+      System.import('main').then(function(m){
+        console.warn('loaded', m);
+      });
+    </script>
+-->
+
+    <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="../bower_components/mocha/mocha.js"></script>
+    <script src="../bower_components/expect/index.js"></script>
+    <script src="../bower_components/chai/chai.js"></script>
+    <script src="../bower_components/sinonjs/sinon.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="../bower_components/blanket/dist/mocha/blanket_mocha.js"></script>
+
+    <!-- TODO: Lib -->
+    <script src="../dist/px-mobile.js"
+      data-cover
+      data-cover-adapter="../bower_components/blanket/dist/adapters/blanket_mocha.js"></script>
+
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="sandbox"></div>
+
+
+    <script>
+    window.assert = chai.assert;
+    //window.expect = chai.expect;
+    window.failSpec = function(done) {
+      assert.fail();
+      return done();
+    };
+    mocha.setup('bdd');
+    //mocha.checkLeaks();
+
+    </script>
+
+    <!-- Specs-->
+    <script src="specs.js"></script>
+<!--
+    <script src="specs/db-spec.js"></script>
+
+    <script src="specs/app-spec.js"></script>
+    <script src="specs/base-class-spec.js"></script>
+    <script src="specs/collection-spec.js"></script>
+    <script src="specs/component-spec.js"></script>
+    <script src="specs/core-spec.js"></script>
+
+    <script src="specs/dom-spec.js"></script>
+
+    <script src="specs/interface-spec.js"></script>
+    <script src="specs/log-spec.js"></script>
+    <script src="specs/model-spec.js"></script>
+    <script src="specs/page-spec.js"></script>
+    <script src="specs/pages-spec.js"></script>
+    <script src="specs/router-spec.js"></script>
+    <script src="specs/simple-router-spec.js"></script>
+    <script src="specs/service-locator-spec.js"></script>
+    <script src="specs/utils-spec.js"></script>
+    <script src="specs/view-spec.js"></script>
+    <script src="specs/views-spec.js"></script>
+-->
+    <script type="text/javascript">
+    mocha.globals([
+      'jQuery',
+      'pxMobile',
+      'px'
+    ]);
+    mocha.run();
+    </script>
+  </body>
+</html>

@@ -1,4 +1,3 @@
-var pxMobile = require('../../dist/px-mobile');
 /** @test {DOM} */
 describe('pxMobile.DOM', function() {
   var el = null;

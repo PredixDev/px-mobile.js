@@ -27,7 +27,7 @@ import Model from './ds/model';
 import pmPage from './elements/pm-page';
 
 // TODO: UI
-import App from './ui/app';
+import App from './core/app';
 import Element from './ui/element';
 import Elements from './ui/elements';
 import Page from './ui/page';

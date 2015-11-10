@@ -26,7 +26,7 @@ export default class HTTP extends BaseClass {
 
 		if (!options.baseUrl) {
 			//throw new Error('HTTP: Must provide a baseUrl');
-				this.log.logApi('[HTTP] - Using default baseUrl - /default');
+			this.log.logApi('[HTTP] - Using default baseUrl - /default');
 		}
 
 		return this;
@@ -38,14 +38,13 @@ export default class HTTP extends BaseClass {
 	 * @return {Response} The original response
 	 */
 	checkStatus(response) {
-
-		if (response.status >= 200 && response.status < 300) {
-			return response;
-		} else {
-			var error = new Error(response.statusText);
-			error.response = response;
-			return response;
-		}
+		return new Promise(function(resolve, reject) {
+			if (response.status >= 200 && response.status < 300) {
+				resolve(response);
+			} else {
+				reject(response);
+			}
+		});
 	}
 
 	/**
@@ -54,12 +53,23 @@ export default class HTTP extends BaseClass {
 	 * @return {Response} The original response with a data property that is the parsed JSON
 	 */
 	parseJSON(response) {
-		if (!response) {
-			throw new Error('Must pass a response object to parseJSON!');
-		}
-		return response.json().then(function(json) {
-			response.data = json;
-			return response;
+		return new Promise(function(resolve, reject) {
+			if (!response) {
+				throw new Error('Must pass a response object to parseJSON!');
+			}
+			if (response.status >= 200 && response.status < 300) {
+				if (response.headers.get('Content-Type') !== 'text/html') {
+					response.json().then(function(json) {
+						response.data = json;
+						resolve(response);
+					});
+				} else {
+					resolve(response);
+				}
+
+			} else {
+				reject(response);
+			}
 		});
 	}
 
@@ -77,8 +87,8 @@ export default class HTTP extends BaseClass {
 	 */
 	getJSON(url = '', options = {}) {
 		return fetch(url, options || {
-			method: 'GET'
-		})
+				method: 'GET'
+			})
 			.then(this.checkStatus)
 			.then(this.parseJSON);
 	}
@@ -129,13 +139,15 @@ export default class HTTP extends BaseClass {
 
 		let benchmark = this.log.logTime('request');
 		return new Promise((resolve, reject) => {
-			return fetch(url, config)
+			fetch(url, config)
 				.then((resp) => {
-				this.log.logHttp(resp.status + ' ' + benchmark.end(), resp, true);
-				//return this.parseJSON(resp).then(resolve, reject);
-				resp.data = {};
-				resolve(resp);
-			}, reject);
+					this.log.logHttp(resp.headers.get('Content-Type') + ' ' + resp.status + ' ' + benchmark.end(), resp, true);
+					if (config.method === 'HEAD') {
+						this.checkStatus(resp).then(resolve, reject);
+					} else {
+						this.parseJSON(resp).then(resolve, reject);
+					}
+				}, reject);
 		});
 	}
 
@@ -153,7 +165,7 @@ export default class HTTP extends BaseClass {
 	 */
 	get(url, options = {}) {
 		this.log.logApi('get', options);
-		return this.request(url, options).then(this.parseJSON);
+		return this.request(url, options);
 	}
 
 	/**

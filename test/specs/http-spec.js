@@ -1,11 +1,11 @@
-var pxMobile = require('../../dist/px-mobile');
 /** @test {HTTP} */
 describe('pxMobile.HTTP', function() {
+  var DATABASE_URL = 'http://localhost:5984/default';
   var http = null,
     mockDoc = {};
   before(function() {
     http = new pxMobile.HTTP('http1', {
-      baseUrl: '/predixgo'
+      baseUrl: DATABASE_URL
     });
   });
 

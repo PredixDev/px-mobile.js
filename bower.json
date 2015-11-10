@@ -1,0 +1,70 @@
+{
+  "_id": "px-mobile.js",
+  "name": "px-mobile.js",
+  "files": [
+    "./dist/**/*.*"
+  ],
+  "main": [
+    "px-mobile.html",
+    "src/js/main.js",
+    "src/scss/main.scss"
+  ],
+  "version": "0.0.1",
+  "authors": [
+    "Jonnie Spratley <jonnie.spratley@ge.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.build.ge.com/predix-mobile/px-mobile.js.git"
+  },
+  "description": "A suite of modules for usage in a Predix Mobile application.",
+  "moduleType": [
+    "es6",
+    "web-component"
+  ],
+  "keywords": [
+    "px",
+    "px-mobile"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "coverage",
+    "bin",
+    "**/.*",
+    ".tmp",
+    "coverage",
+    "tasks",
+    "test",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "es6-shim": "~0.33.0",
+    "fastclick": "~1.0.6",
+    "fetch": "~0.10.0",
+    "font-awesome": "~4.4.0",
+    "system.js": "~0.18.10",
+    "webcomponentsjs": "~0.7.14",
+    "polymer": "~1.2.1"
+  },
+  "devDependencies": {
+    "blanket": "~1.1.7",
+    "chai": "~3.4.0",
+    "expect": "~0.3.1",
+    "fetch-mock": "~2.1.0",
+    "highlightjs": "~8.8.0",
+    "iron-component-page": "PolymerElements/iron-component-page#~1.0.8",
+    "jquery": "~2.1.4",
+    "juicy-ace-editor": "~1.1.1",
+    "mocha": "~2.3.2",
+    "pouchdb": "~5.0.0",
+    "sinon": "~1.16.1",
+    "toc": "~0.3.2",
+    "web-component-tester": "~3.3.22"
+  },
+  "resolutions": {
+    "chai": "~3.4.0",
+    "jquery": "~1.X"
+  }
+}

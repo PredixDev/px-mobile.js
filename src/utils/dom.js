@@ -5,8 +5,6 @@
  * var $ = selector => new DOM(selector);
  */
 export default class DOM {
-
-
 	constructor(selector, context) {
 		console.time('dom');
 		var matches = {
@@ -60,7 +58,7 @@ export default class DOM {
 	 * @param {String} className The class name to add
 	 */
 	addClass(className) {
-		return this.each(function () {
+		return this.each(function() {
 			if (this.classList) {
 				this.classList.add(className);
 			} else {
@@ -74,7 +72,7 @@ export default class DOM {
 	 * @param {String} className The class name to remove
 	 */
 	removeClass(className) {
-		return this.each(function () {
+		return this.each(function() {
 			this.classList.remove(className);
 		});
 	}
@@ -141,7 +139,7 @@ export default class DOM {
 	}
 
 	on(event, callback) {
-		return this.each(function () {
+		return this.each(function() {
 			this.addEventListener(event, callback, false);
 		});
 	}
@@ -212,7 +210,7 @@ export default class DOM {
 
 
 
-var dom = function (selector, context, undefined) {
+var dom = function(selector, context, undefined) {
 
 
 	var matches = {
@@ -238,7 +236,7 @@ var dom = function (selector, context, undefined) {
 };
 
 //dom.extend({}, objA, objB);
-dom.extend = function (out) {
+dom.extend = function(out) {
 	out = out || {};
 	for (var i = 1; i < arguments.length; i++) {
 		if (!arguments[i]) {
@@ -256,7 +254,7 @@ dom.extend = function (out) {
 
 
 // TODO: Extend Element on Window.
-(function (win) {
+(function(win) {
 
 	/* Keep source code the same */
 	if (!win || !win.Element) {
@@ -264,21 +262,21 @@ dom.extend = function (out) {
 	}
 
 	//dom('#iddiv').find('.inside')
-	win.Element.prototype.find = function (selector) {
+	win.Element.prototype.find = function(selector) {
 		return dom(selector, this);
 	};
 
-	win.Element.prototype.append = function (el) {
+	win.Element.prototype.append = function(el) {
 		return this.appendChild(el);
 	};
 
 	//dom(el).clone()
-	win.Element.prototype.clone = function () {
+	win.Element.prototype.clone = function() {
 		return this.cloneNode(true);
 	};
 
 	//dom(el).hasClass(name)
-	window.Element.prototype.hasClass = function (className) {
+	window.Element.prototype.hasClass = function(className) {
 		if (this.classList) {
 			return this.classList.contains(className);
 		} else {
@@ -287,7 +285,7 @@ dom.extend = function (out) {
 	};
 
 	//dom(el).addClass(name)
-	win.Element.prototype.addClass = function (className) {
+	win.Element.prototype.addClass = function(className) {
 		var classes = className.split(' ');
 		for (var i = 0; i < classes.length; i++) {
 			if (this.classList) {
@@ -300,23 +298,22 @@ dom.extend = function (out) {
 	};
 
 	//dom(el).removeClass(name)
-	win.Element.prototype.removeClass = function (className) {
+	win.Element.prototype.removeClass = function(className) {
 		var el = this;
 		if (el.classList && className) {
 			el.classList.remove(className);
-		} else if(el.classList && !className){
-			el.classList.forEach(function(cla){
+		} else if (el.classList && !className) {
+			el.classList.forEach(function(cla) {
 				el.removeClass(cla);
 			});
-		}
-		else {
+		} else {
 			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 		}
 		return this;
 	};
 
 	//dom(el).toggleClass(name)
-	win.Element.prototype.toggleClass = function (className) {
+	win.Element.prototype.toggleClass = function(className) {
 		var el = this;
 		if (el.classList) {
 			el.classList.toggle(className);
@@ -334,7 +331,7 @@ dom.extend = function (out) {
 	};
 
 	//dom().css('prop', 'value') support
-	win.Element.prototype.css = function (prop, value) {
+	win.Element.prototype.css = function(prop, value) {
 		if (value) {
 			this.style[prop] = value;
 			return this;
@@ -346,7 +343,7 @@ dom.extend = function (out) {
 	};
 
 	//dom(selector).attr('prop', 'value')
-	win.Element.prototype.attr = function (name, value) {
+	win.Element.prototype.attr = function(name, value) {
 		name = name.toLowerCase();
 
 		if (value) {
@@ -357,7 +354,7 @@ dom.extend = function (out) {
 		}
 	};
 
-	win.Element.prototype.data = function (name, value) {
+	win.Element.prototype.data = function(name, value) {
 		if (value) {
 			this.setAttribute('data-' + name, value);
 			return this;
@@ -368,7 +365,7 @@ dom.extend = function (out) {
 
 
 
-	win.Element.prototype.on = function (eventType, callback) {
+	win.Element.prototype.on = function(eventType, callback) {
 		eventType = eventType.split(' ');
 		for (var i = 0; i < eventType.length; i++) {
 			this.addEventListener(eventType[i], callback);
@@ -377,13 +374,13 @@ dom.extend = function (out) {
 	};
 
 	//px.mobile.dom('#sandbox').off('click', handler);
-	win.Element.prototype.off = function (eventName, eventHandler) {
+	win.Element.prototype.off = function(eventName, eventHandler) {
 		this.removeEventListener(eventName, eventHandler);
 	};
 
 
 	//px.mobile.dom('#sandbox').trigger('custom-event', {name: 'value'});
-	win.Element.prototype.trigger = function (eventName, eventData) {
+	win.Element.prototype.trigger = function(eventName, eventData) {
 		var event;
 		if (
 			win.CustomEvent) {
@@ -399,13 +396,13 @@ dom.extend = function (out) {
 
 
 	//dom(el).empty();
-	win.Element.prototype.empty = function () {
+	win.Element.prototype.empty = function() {
 		this.innerHTML = '';
 		return this;
 	};
 
 	//dom(el).html();
-	win.Element.prototype.html = function (html) {
+	win.Element.prototype.html = function(html) {
 		if (html) {
 			this.innerHTML = html;
 			return this;
@@ -415,7 +412,7 @@ dom.extend = function (out) {
 	};
 
 	//dom(el).text();
-	win.Element.prototype.text = function (text) {
+	win.Element.prototype.text = function(text) {
 		if (text) {
 			this.textContent = text;
 			return this;
@@ -425,22 +422,22 @@ dom.extend = function (out) {
 	};
 
 	//dom(el).next();
-	win.Element.prototype.next = function () {
+	win.Element.prototype.next = function() {
 		return this.nextElementSibling;
 	};
 
 	//dom(el).parent();
-	win.Element.prototype.parent = function () {
+	win.Element.prototype.parent = function() {
 		return this.parentNode;
 	};
 
 	//dom(el).remove();
-	win.Element.prototype.remove = function () {
+	win.Element.prototype.remove = function() {
 		return this.parentNode.removeChild(this);
 	};
 
-	win.Element.prototype.child = function (el) {
-		if(el){
+	win.Element.prototype.child = function(el) {
+		if (el) {
 			return this.querySelectorAll(el);
 		} else {
 			return this.children;
@@ -448,7 +445,7 @@ dom.extend = function (out) {
 	};
 
 	//dom(el).position();
-	win.Element.prototype.position = function () {
+	win.Element.prototype.position = function() {
 		var pos = {
 			left: this.offsetLeft,
 			top: this.offsetTop
@@ -459,16 +456,16 @@ dom.extend = function (out) {
 	// TODO: Extend nodelist
 
 	//dom().addClass('name');
-	win.NodeList.prototype.addClass = function (name) {
-		this.each(function (el) {
+	win.NodeList.prototype.addClass = function(name) {
+		this.each(function(el) {
 			el.classList.add(name);
 		});
 		return this;
 	};
 
 	// $().removeClass('name');
-	win.NodeList.prototype.removeClass = function (name) {
-		this.each(function (el) {
+	win.NodeList.prototype.removeClass = function(name) {
+		this.each(function(el) {
 			el.classList.remove(name);
 		});
 		return this;
@@ -489,8 +486,8 @@ dom.extend = function (out) {
 	win.NodeList.prototype.each = Array.prototype.forEach;
 
 
-	win.NodeList.prototype.attr = function (name, value) {
-		this.each(function (el) {
+	win.NodeList.prototype.attr = function(name, value) {
+		this.each(function(el) {
 			if (value) {
 				el.setAttribute(name, value);
 			} else {
@@ -500,16 +497,16 @@ dom.extend = function (out) {
 		return this;
 	};
 
-	win.NodeList.prototype.toggleClass = function (className) {
-		this.each(function (el) {
+	win.NodeList.prototype.toggleClass = function(className) {
+		this.each(function(el) {
 			el.toggleClass(className);
 		});
 		return this;
 	};
 
 
-	win.NodeList.prototype.css = function (prop, value) {
-		this.each(function (el) {
+	win.NodeList.prototype.css = function(prop, value) {
+		this.each(function(el) {
 			el.css(prop, value);
 		});
 		return this;
@@ -517,8 +514,8 @@ dom.extend = function (out) {
 
 
 
-	win.NodeList.prototype.on = function (eventType, callback) {
-		this.each(function (el) {
+	win.NodeList.prototype.on = function(eventType, callback) {
+		this.each(function(el) {
 			el.on(eventType, callback);
 		});
 		return this;
@@ -526,11 +523,11 @@ dom.extend = function (out) {
 
 
 
-	win.NodeList.prototype.first = function () {
+	win.NodeList.prototype.first = function() {
 		return (this.length < 2) ? this : this[0];
 	};
 
-	win.NodeList.prototype.last = function () {
+	win.NodeList.prototype.last = function() {
 		// if there are many items, return the last
 		return (this.length > 1) ? this[this.length - 1] : this;
 	};

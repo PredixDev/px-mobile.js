@@ -146,7 +146,7 @@ export default class DB extends BaseClass {
 				}
 			};
 		}
-		return this.adapter.put(`/${doc._id}`, doc, options).then(this.adapter.parseJSON);
+		return this.adapter.put(`/${doc._id}`, doc, options);
 	}
 
 	/**
@@ -192,7 +192,7 @@ export default class DB extends BaseClass {
 			params: {
 				rev: rev
 			}
-		}).then(this.adapter.parseJSON);
+		});
 	}
 
 	/**
@@ -289,7 +289,7 @@ export default class DB extends BaseClass {
 		this.log.logApi('bulkDocs', docs);
 		return this.adapter.post('/_bulk_docs', {
 			docs: docs
-		}).then(this.adapter.parseJSON);
+		});
 	}
 
 	/**

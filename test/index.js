@@ -1,4 +1,5 @@
 /* global describe, it, before, expect */
+require('../src/index');
 require('./setup');
 // TODO: This file includes all specs
 require('./specs/app-spec');

@@ -32,28 +32,31 @@
     "src": "./src"
   },
   "scripts": {
-    "clean": "rimraf dist",
     "babel": "babel $npm_package_config_dist/$npm_package_name.js --out-file $npm_package_config_dist/$npm_package_name.js --source-maps",
     "browserify": "browserify --standalone $npm_package_name -e  src/index.js -t babelify -o dist/px-mobile.js",
-    "lint": "eslint src/** test",
+    "browserify:specs": "browserify test/index.js -o test/specs.js",
+    "build": "npm run browserify && npm run test",
     "check": "npm run lint -s && dependency-check package.json --entry src",
-    "watch": "watch 'npm run build' src test",
-    "test2": "babel-node test/index.js | tspec",
-    "test": "mocha --compilers js:babel/register --recursive test/index.js",
-    "prebuild": "npm run check -s && npm run clean -s",
-    "build": "babel --optional runtime src -d dist",
-    "postbuild": "npm run test -s",
+    "clean": "rimraf dist",
     "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
     "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
-    "postcoveralls": "rimraf ./coverage",
-    "prepublish": "npm run build -s",
     "deploy": "git pull --rebase origin master && git push origin master",
-    "patch": "npm version patch && npm publish",
-    "minor": "npm version minor && npm publish",
+    "docs": "esdoc -c esdoc.json",
+    "lint": "eslint src/** test",
     "major": "npm version major && npm publish",
-    "browserify:specs": "browserify test/index.js -o test/specs.js",
+    "minor": "npm version minor && npm publish",
+    "patch": "npm version patch && npm publish",
+    "postbuild": "npm run test -s",
+    "postcoveralls": "rimraf ./coverage",
     "postpublish": "git push origin master --follow-tags",
-    "toc": "doctoc --github --title \"# Changelog\" CHANGELOG.md"
+    "prebuild1": "npm run check -s && npm run clean -s",
+    "prepublish": "npm run build -s",
+    "pretest": "npm run lint && npm run browserify:specs",
+    "rollup": "rollup --format=iife --name=$npm_package_config_name  --input=$npm_package_jspm_main --output=$npm_package_config_dist/$npm_package_name.js",
+    "test": "mocha --compilers js:babel/register --recursive test/index.js",
+    "test2": "babel-node test/index.js | tspec",
+    "toc": "doctoc --github --title \"# Changelog\" CHANGELOG.md",
+    "watch": "watch 'npm run build' src test/specs"
   },
   "browserify": {
     "transform": [
@@ -81,9 +84,10 @@
   },
   "homepage": "https://github.com/jonniespratley/px-mobilejs#readme",
   "devDependencies": {
-    "babel": "^5.8.21",
+    "babel": "^5.8.29",
     "babel-cli": "^6.1.2",
     "babel-eslint": "^4.1.3",
+    "babel-preset-es2015": "^6.1.2",
     "babel-runtime": "^5.8.24",
     "babelify": "^6.1.3",
     "blanket": "^1.1.7",
@@ -94,6 +98,7 @@
     "coveralls": "*",
     "dependency-check": "*",
     "doctoc": "*",
+    "esdoc": "^0.4.3",
     "eslint": "*",
     "isparta": "*",
     "mocha": "^2.3.3",
@@ -102,7 +107,7 @@
     "sinon": "^1.17.2",
     "tap-spec": "*",
     "tape": "*",
-    "watch": "*"
+    "watch": "^0.16.0"
   },
   "dependencies": {
     "babel-runtime": "*"
