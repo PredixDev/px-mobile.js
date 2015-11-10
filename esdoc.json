@@ -1,0 +1,18 @@
+{
+  "source": "./src",
+  "destination": "./docs/",
+  "index": "./README.md",
+  "package": "./package.json",
+  "coverage": true,
+  "includeSource": true,
+  "builtinExternal": true,
+  "test": {
+    "type": "mocha",
+    "source": "./test/specs",
+    "includes": ["\\.(js|es6)$"],
+    "excludes": ["\\.config\\.(js|es6)$"]
+  },
+  "title": "px-mobile.js API",
+  "styles": [
+  ]
+}

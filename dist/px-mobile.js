@@ -81,7 +81,216 @@ var BaseClass = (function () {
 
 exports['default'] = BaseClass;
 module.exports = exports['default'];
-},{"./core/pubsub":3,"./utils/log":25,"./utils/utils":26}],2:[function(require,module,exports){
+},{"./core/pubsub":4,"./utils/log":25,"./utils/utils":26}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+
+var _createClass = (function () {
+	function defineProperties(target, props) {
+		for (var i = 0; i < props.length; i++) {
+			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+		}
+	}return function (Constructor, protoProps, staticProps) {
+		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	};
+})();
+
+var _get = function get(_x, _x2, _x3) {
+	var _again = true;_function: while (_again) {
+		var object = _x,
+		    property = _x2,
+		    receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {
+			var parent = Object.getPrototypeOf(object);if (parent === null) {
+				return undefined;
+			} else {
+				_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;
+			}
+		} else if ('value' in desc) {
+			return desc.value;
+		} else {
+			var getter = desc.get;if (getter === undefined) {
+				return undefined;
+			}return getter.call(receiver);
+		}
+	}
+};
+
+function _interopRequireDefault(obj) {
+	return obj && obj.__esModule ? obj : { 'default': obj };
+}
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError('Cannot call a class as a function');
+	}
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== 'function' && superClass !== null) {
+		throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var _coreCore = require('../core/core');
+
+var _coreCore2 = _interopRequireDefault(_coreCore);
+
+var _coreServiceLocator = require('../core/service-locator');
+
+var _coreServiceLocator2 = _interopRequireDefault(_coreServiceLocator);
+
+var _instance = null;
+
+var App = (function (_Core) {
+	_inherits(App, _Core);
+
+	_createClass(App, null, [{
+		key: 'getInstance',
+		value: function getInstance() {
+			if (_instance === null) {
+				_instance = new App();
+			}
+			return _instance;
+		}
+	}]);
+
+	function App(name, options) {
+		_classCallCheck(this, App);
+
+		_get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this, name, options);
+		this.modules = {};
+		this.session = {};
+
+		this.services = new _coreServiceLocator2['default'](name, options);
+
+		this.params = {
+
+			cache: true,
+			cacheIgnore: [],
+			cacheIgnoreGetParameters: false,
+			cacheDuration: 1000 * 60 * 10,
+			preloadPreviousPage: true,
+			uniqueHistory: false,
+			uniqueHistoryIgnoreGetParameters: false,
+			dynamicPageUrl: 'content-{{index}}',
+			allowDuplicateUrls: false,
+			router: true,
+
+			pushState: false,
+			pushStateRoot: undefined,
+			pushStateNoAnimation: false,
+			pushStateSeparator: '#!/',
+			pushStatePreventOnLoad: true,
+
+			fastClicks: true,
+			fastClicksDistanceThreshold: 10,
+			fastClicksDelayBetweenClicks: 50,
+
+			tapHold: false,
+			tapHoldDelay: 750,
+			tapHoldPreventClicks: true,
+
+			activeState: true,
+			activeStateElements: 'a, button, label, span',
+
+			animateNavBackIcon: false,
+
+			swipeBackPage: true,
+			swipeBackPageThreshold: 0,
+			swipeBackPageActiveArea: 30,
+			swipeBackPageAnimateShadow: true,
+			swipeBackPageAnimateOpacity: true,
+
+			ajaxLinks: undefined,
+			externalLinks: '.external',
+			sortable: true,
+
+			hideNavbarOnPageScroll: false,
+			hideToolbarOnPageScroll: false,
+			hideTabbarOnPageScroll: false,
+			showBarsOnPageScrollEnd: true,
+			showBarsOnPageScrollTop: true,
+
+			scrollTopOnNavbarClick: false,
+			scrollTopOnStatusbarClick: false,
+
+			modalButtonOk: 'OK',
+			modalButtonCancel: 'Cancel',
+			modalUsernamePlaceholder: 'Username',
+			modalPasswordPlaceholder: 'Password',
+			modalTitle: 'App',
+			modalCloseByOutside: false,
+			actionsCloseByOutside: true,
+			popupCloseByOutside: true,
+			modalPreloaderTitle: 'Loading... ',
+			modalStack: true,
+
+			imagesLazyLoadThreshold: 0,
+			imagesLazyLoadSequential: true,
+
+			viewClass: 'pxm-view',
+			viewMainClass: 'pxm-view-main',
+			viewsClass: 'pxm-views',
+
+			animatePages: true,
+
+			templates: {},
+			templateData: {},
+			templatePages: false,
+			precompileTemplates: false,
+
+			init: true
+		};
+
+		for (var param in options) {
+			this.params[param] = options[param];
+		}
+	}
+
+	_createClass(App, [{
+		key: 'configureRouter',
+		value: function configureRouter(config, router) {
+			config.title = 'App';
+			config.map([{
+				route: ['', 'welcome'],
+				name: 'welcome',
+				moduleId: 'welcome',
+				nav: true,
+				title: 'Welcome'
+			}]);
+
+			this.router = router;
+		}
+	}, {
+		key: 'start',
+		value: function start() {
+			this.log.logApi('start', this);
+			return Promise.all(this.services.startAll());
+		}
+	}, {
+		key: 'bootstrap',
+		value: function bootstrap(cb) {
+			this.log.logApi('bootstrap', this);
+			cb(this);
+		}
+	}, {
+		key: 'run',
+		value: function run(cb) {
+			this.log.logApi('run', this);
+			this.start();
+			cb(this);
+		}
+	}]);
+
+	return App;
+})(_coreCore2['default']);
+
+exports['default'] = App;
+module.exports = exports['default'];
+},{"../core/core":3,"../core/service-locator":7}],3:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -283,7 +492,7 @@ var Core = (function (_BaseClass) {
 
 exports['default'] = Core;
 module.exports = exports['default'];
-},{"../base":1}],3:[function(require,module,exports){
+},{"../base":1}],4:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -411,7 +620,7 @@ var PubSub = (function () {
 
 exports['default'] = PubSub;
 module.exports = exports['default'];
-},{"../base":1,"../utils/dom":22,"../utils/log":25}],4:[function(require,module,exports){
+},{"../base":1,"../utils/dom":22,"../utils/log":25}],5:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -575,7 +784,7 @@ var RouterHistory = (function (_BaseClass) {
 
 exports['default'] = RouterHistory;
 module.exports = exports['default'];
-},{"../base":1}],5:[function(require,module,exports){
+},{"../base":1}],6:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -924,7 +1133,7 @@ var Router = (function (_BaseClass) {
 
 exports['default'] = Router;
 module.exports = exports['default'];
-},{"../base":1,"./pubsub":3,"./router-history":4}],6:[function(require,module,exports){
+},{"../base":1,"./pubsub":4,"./router-history":5}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1009,7 +1218,7 @@ var ServiceLocator = (function () {
 
 exports['default'] = ServiceLocator;
 module.exports = exports['default'];
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1241,7 +1450,7 @@ var SimpleRouter = (function (_BaseClass) {
 
 exports['default'] = SimpleRouter;
 module.exports = exports['default'];
-},{"../base":1}],8:[function(require,module,exports){
+},{"../base":1}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1403,7 +1612,7 @@ var Collection = (function (_BaseClass) {
 
 exports['default'] = Collection;
 module.exports = exports['default'];
-},{"../base":1,"./http":10}],9:[function(require,module,exports){
+},{"../base":1,"./http":11}],10:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -1525,7 +1734,7 @@ var DB = (function (_BaseClass) {
 					}
 				};
 			}
-			return this.adapter.put('/' + doc._id, doc, options).then(this.adapter.parseJSON);
+			return this.adapter.put('/' + doc._id, doc, options);
 		}
 	}, {
 		key: 'post',
@@ -1553,7 +1762,7 @@ var DB = (function (_BaseClass) {
 				params: {
 					rev: rev
 				}
-			}).then(this.adapter.parseJSON);
+			});
 		}
 	}, {
 		key: 'getAttachment',
@@ -1599,7 +1808,7 @@ var DB = (function (_BaseClass) {
 			this.log.logApi('bulkDocs', docs);
 			return this.adapter.post('/_bulk_docs', {
 				docs: docs
-			}).then(this.adapter.parseJSON);
+			});
 		}
 	}, {
 		key: 'changes',
@@ -1681,7 +1890,7 @@ var DB = (function (_BaseClass) {
 
 exports['default'] = DB;
 module.exports = exports['default'];
-},{"../base":1,"./http":10}],10:[function(require,module,exports){
+},{"../base":1,"./http":11}],11:[function(require,module,exports){
 
 'use strict';
 Object.defineProperty(exports, '__esModule', {
@@ -1761,24 +1970,33 @@ var HTTP = (function (_BaseClass) {
 	_createClass(HTTP, [{
 		key: 'checkStatus',
 		value: function checkStatus(response) {
-
-			if (response.status >= 200 && response.status < 300) {
-				return response;
-			} else {
-				var error = new Error(response.statusText);
-				error.response = response;
-				return response;
-			}
+			return new Promise(function (resolve, reject) {
+				if (response.status >= 200 && response.status < 300) {
+					resolve(response);
+				} else {
+					reject(response);
+				}
+			});
 		}
 	}, {
 		key: 'parseJSON',
 		value: function parseJSON(response) {
-			if (!response) {
-				throw new Error('Must pass a response object to parseJSON!');
-			}
-			return response.json().then(function (json) {
-				response.data = json;
-				return response;
+			return new Promise(function (resolve, reject) {
+				if (!response) {
+					throw new Error('Must pass a response object to parseJSON!');
+				}
+				if (response.status >= 200 && response.status < 300) {
+					if (response.headers.get('Content-Type') !== 'text/html') {
+						response.json().then(function (json) {
+							response.data = json;
+							resolve(response);
+						});
+					} else {
+						resolve(response);
+					}
+				} else {
+					reject(response);
+				}
 			});
 		}
 	}, {
@@ -1823,11 +2041,13 @@ var HTTP = (function (_BaseClass) {
 
 			var benchmark = this.log.logTime('request');
 			return new Promise(function (resolve, reject) {
-				return fetch(url, config).then(function (resp) {
-					_this2.log.logHttp(resp.status + ' ' + benchmark.end(), resp, true);
-
-					resp.data = {};
-					resolve(resp);
+				fetch(url, config).then(function (resp) {
+					_this2.log.logHttp(resp.headers.get('Content-Type') + ' ' + resp.status + ' ' + benchmark.end(), resp, true);
+					if (config.method === 'HEAD') {
+						_this2.checkStatus(resp).then(resolve, reject);
+					} else {
+						_this2.parseJSON(resp).then(resolve, reject);
+					}
 				}, reject);
 			});
 		}
@@ -1837,7 +2057,7 @@ var HTTP = (function (_BaseClass) {
 			var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
 			this.log.logApi('get', options);
-			return this.request(url, options).then(this.parseJSON);
+			return this.request(url, options);
 		}
 	}, {
 		key: 'put',
@@ -1889,7 +2109,7 @@ var HTTP = (function (_BaseClass) {
 
 exports['default'] = HTTP;
 module.exports = exports['default'];
-},{"../base":1}],11:[function(require,module,exports){
+},{"../base":1}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2097,7 +2317,7 @@ var Model = (function (_BaseClass) {
 
 exports['default'] = Model;
 module.exports = exports['default'];
-},{"../base":1,"../utils/log":25,"../utils/utils":26,"./http":10}],12:[function(require,module,exports){
+},{"../base":1,"../utils/log":25,"../utils/utils":26,"./http":11}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2328,7 +2548,7 @@ var pmPage = (function () {
 
 exports['default'] = pmPage;
 module.exports = exports['default'];
-},{"../utils/log":25,"../utils/utils":26}],13:[function(require,module,exports){
+},{"../utils/log":25,"../utils/utils":26}],14:[function(require,module,exports){
 
 'use strict';
 
@@ -2396,9 +2616,9 @@ var _elementsPmPage = require('./elements/pm-page');
 
 var _elementsPmPage2 = _interopRequireDefault(_elementsPmPage);
 
-var _uiApp = require('./ui/app');
+var _coreApp = require('./core/app');
 
-var _uiApp2 = _interopRequireDefault(_uiApp);
+var _coreApp2 = _interopRequireDefault(_coreApp);
 
 var _uiElement = require('./ui/element');
 
@@ -2465,7 +2685,7 @@ var pxMobile = {
 	HTTP: _dsHttp2['default'],
 	Model: _dsModel2['default'],
 
-	App: _uiApp2['default'],
+	App: _coreApp2['default'],
 	Page: _uiPage2['default'],
 	Pages: _uiPages2['default'],
 	View: _uiView2['default'],
@@ -2480,7 +2700,7 @@ var pxMobile = {
 	Interfaces: _utilsInterfaces2['default'],
 	dom: _utilsDom2['default'],
 	ui: {
-		App: _uiApp2['default'],
+		App: _coreApp2['default'],
 		Component: _uiComponent2['default'],
 		Element: _uiElement2['default'],
 		Page: _uiPage2['default'],
@@ -2495,216 +2715,7 @@ var pxMobile = {
 
 exports['default'] = pxMobile;
 module.exports = exports['default'];
-},{"./base":1,"./core/core":2,"./core/pubsub":3,"./core/router":5,"./core/router-history":4,"./core/simple-router":7,"./ds/collection":8,"./ds/db":9,"./ds/http":10,"./ds/model":11,"./elements/pm-page":12,"./ui/app":14,"./ui/component":15,"./ui/element":16,"./ui/elements":17,"./ui/page":18,"./ui/pages":19,"./ui/view":20,"./ui/views":21,"./utils/dom":22,"./utils/interface":23,"./utils/interfaces":24,"./utils/log":25,"./utils/utils":26}],14:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-	value: true
-});
-
-var _createClass = (function () {
-	function defineProperties(target, props) {
-		for (var i = 0; i < props.length; i++) {
-			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-		}
-	}return function (Constructor, protoProps, staticProps) {
-		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-	};
-})();
-
-var _get = function get(_x, _x2, _x3) {
-	var _again = true;_function: while (_again) {
-		var object = _x,
-		    property = _x2,
-		    receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {
-			var parent = Object.getPrototypeOf(object);if (parent === null) {
-				return undefined;
-			} else {
-				_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;
-			}
-		} else if ('value' in desc) {
-			return desc.value;
-		} else {
-			var getter = desc.get;if (getter === undefined) {
-				return undefined;
-			}return getter.call(receiver);
-		}
-	}
-};
-
-function _interopRequireDefault(obj) {
-	return obj && obj.__esModule ? obj : { 'default': obj };
-}
-
-function _classCallCheck(instance, Constructor) {
-	if (!(instance instanceof Constructor)) {
-		throw new TypeError('Cannot call a class as a function');
-	}
-}
-
-function _inherits(subClass, superClass) {
-	if (typeof superClass !== 'function' && superClass !== null) {
-		throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
-	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var _coreCore = require('../core/core');
-
-var _coreCore2 = _interopRequireDefault(_coreCore);
-
-var _coreServiceLocator = require('../core/service-locator');
-
-var _coreServiceLocator2 = _interopRequireDefault(_coreServiceLocator);
-
-var _instance = null;
-
-var App = (function (_Core) {
-	_inherits(App, _Core);
-
-	_createClass(App, null, [{
-		key: 'getInstance',
-		value: function getInstance() {
-			if (_instance === null) {
-				_instance = new App();
-			}
-			return _instance;
-		}
-	}]);
-
-	function App(name, options) {
-		_classCallCheck(this, App);
-
-		_get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this, name, options);
-		this.modules = {};
-		this.session = {};
-
-		this.services = new _coreServiceLocator2['default'](name, options);
-
-		this.params = {
-
-			cache: true,
-			cacheIgnore: [],
-			cacheIgnoreGetParameters: false,
-			cacheDuration: 1000 * 60 * 10,
-			preloadPreviousPage: true,
-			uniqueHistory: false,
-			uniqueHistoryIgnoreGetParameters: false,
-			dynamicPageUrl: 'content-{{index}}',
-			allowDuplicateUrls: false,
-			router: true,
-
-			pushState: false,
-			pushStateRoot: undefined,
-			pushStateNoAnimation: false,
-			pushStateSeparator: '#!/',
-			pushStatePreventOnLoad: true,
-
-			fastClicks: true,
-			fastClicksDistanceThreshold: 10,
-			fastClicksDelayBetweenClicks: 50,
-
-			tapHold: false,
-			tapHoldDelay: 750,
-			tapHoldPreventClicks: true,
-
-			activeState: true,
-			activeStateElements: 'a, button, label, span',
-
-			animateNavBackIcon: false,
-
-			swipeBackPage: true,
-			swipeBackPageThreshold: 0,
-			swipeBackPageActiveArea: 30,
-			swipeBackPageAnimateShadow: true,
-			swipeBackPageAnimateOpacity: true,
-
-			ajaxLinks: undefined,
-			externalLinks: '.external',
-			sortable: true,
-
-			hideNavbarOnPageScroll: false,
-			hideToolbarOnPageScroll: false,
-			hideTabbarOnPageScroll: false,
-			showBarsOnPageScrollEnd: true,
-			showBarsOnPageScrollTop: true,
-
-			scrollTopOnNavbarClick: false,
-			scrollTopOnStatusbarClick: false,
-
-			modalButtonOk: 'OK',
-			modalButtonCancel: 'Cancel',
-			modalUsernamePlaceholder: 'Username',
-			modalPasswordPlaceholder: 'Password',
-			modalTitle: 'App',
-			modalCloseByOutside: false,
-			actionsCloseByOutside: true,
-			popupCloseByOutside: true,
-			modalPreloaderTitle: 'Loading... ',
-			modalStack: true,
-
-			imagesLazyLoadThreshold: 0,
-			imagesLazyLoadSequential: true,
-
-			viewClass: 'pxm-view',
-			viewMainClass: 'pxm-view-main',
-			viewsClass: 'pxm-views',
-
-			animatePages: true,
-
-			templates: {},
-			templateData: {},
-			templatePages: false,
-			precompileTemplates: false,
-
-			init: true
-		};
-
-		for (var param in options) {
-			this.params[param] = options[param];
-		}
-	}
-
-	_createClass(App, [{
-		key: 'configureRouter',
-		value: function configureRouter(config, router) {
-			config.title = 'App';
-			config.map([{
-				route: ['', 'welcome'],
-				name: 'welcome',
-				moduleId: 'welcome',
-				nav: true,
-				title: 'Welcome'
-			}]);
-
-			this.router = router;
-		}
-	}, {
-		key: 'start',
-		value: function start() {
-			this.log.logApi('start', this);
-			return Promise.all(this.services.startAll());
-		}
-	}, {
-		key: 'bootstrap',
-		value: function bootstrap(cb) {
-			this.log.logApi('bootstrap', this);
-			cb(this);
-		}
-	}, {
-		key: 'run',
-		value: function run(cb) {
-			this.log.logApi('run', this);
-			this.start();
-			cb(this);
-		}
-	}]);
-
-	return App;
-})(_coreCore2['default']);
-
-exports['default'] = App;
-module.exports = exports['default'];
-},{"../core/core":2,"../core/service-locator":6}],15:[function(require,module,exports){
+},{"./base":1,"./core/app":2,"./core/core":3,"./core/pubsub":4,"./core/router":6,"./core/router-history":5,"./core/simple-router":8,"./ds/collection":9,"./ds/db":10,"./ds/http":11,"./ds/model":12,"./elements/pm-page":13,"./ui/component":15,"./ui/element":16,"./ui/elements":17,"./ui/page":18,"./ui/pages":19,"./ui/view":20,"./ui/views":21,"./utils/dom":22,"./utils/interface":23,"./utils/interfaces":24,"./utils/log":25,"./utils/utils":26}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3090,7 +3101,7 @@ var Page = (function (_BaseClass) {
 
 exports['default'] = Page;
 module.exports = exports['default'];
-},{"../base":1,"../core/pubsub":3}],19:[function(require,module,exports){
+},{"../base":1,"../core/pubsub":4}],19:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -3249,7 +3260,7 @@ var Pages = (function (_BaseClass) {
 
 exports['default'] = Pages;
 module.exports = exports['default'];
-},{"../base":1,"../core/pubsub":3}],20:[function(require,module,exports){
+},{"../base":1,"../core/pubsub":4}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4149,16 +4160,17 @@ var Logger = (function () {
 		var defaults = {
 			colors: {
 				trace: 'color:#7672E6;',
-				success: 'color:#288A29;',
-				info: 'color:#1F9A2D;',
-				warn: 'color:#9E9E23;',
+				success: 'color:#46AD00;',
+				info: 'color:#005CB9;',
+				warn: 'color:#FF9821;',
 				fatal: 'color:#C057BA;',
-				error: 'color:#FC121E;',
-				debug: 'color:#7672E6;'
+				error: 'color:#E32533;',
+				debug: 'color:#005CB9;'
 			}
 		};
 		this.colors = defaults.colors;
 		this.options = options;
+		this.debugEnabled = options.debugEnabled || true;
 		return this;
 	}
 
@@ -4167,7 +4179,9 @@ var Logger = (function () {
 		value: function log(level, args) {
 			var timestamp = new Date().toLocaleString();
 			var log = window.console ? window.console.log.bind(window.console) : function () {};
-			log('[' + timestamp + '] [' + level + '] [' + this.category + ']', arguments);
+			if (this.debugEnabled) {
+				log('[' + timestamp + '] [' + level + '] [' + this.category + ']', arguments);
+			}
 		}
 	}, {
 		key: 'debug',
@@ -4535,5 +4549,5 @@ var aggregation = function aggregation(baseClass) {
 	return base;
 };
 exports.aggregation = aggregation;
-},{}]},{},[13])(13)
+},{}]},{},[14])(14)
 });

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/core/router.js | px-mobile.js API API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="git+https://github.com/jonniespratley/px-mobilejs.git">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/base.js~BaseClass.html">BaseClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pxMobile">pxMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/x-module.js~xModule.html">xModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/core.js~Core.html">Core</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/plugins.js~Plugins.html">Plugins</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/pubsub.js~PubSub.html">PubSub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/router-history.js~RouterHistory.html">RouterHistory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/router.js~Router.html">Router</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/service-locator.js~ServiceLocator.html">ServiceLocator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/simple-router.js~SimpleRouter.html">SimpleRouter</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">ds</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/collection.js~Collection.html">Collection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/db.js~DB.html">DB</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/http.js~HTTP.html">HTTP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/model.js~Model.html">Model</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">elements</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/elements/pm-page.js~pmPage.html">pmPage</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">ui</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/component.js~Component.html">Component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/element.js~Element.html">Element</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/elements.js~Elements.html">Elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/pages.js~Pages.html">Pages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/view.js~View.html">View</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/views.js~Views.html">Views</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/dom.js~DOM.html">DOM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/interface.js~Interface.html">Interface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/log.js~Logger.html">Logger</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dom">dom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addMixin">addMixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debounce">debounce</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extend">extend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendClass">extendClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendDeep">extendDeep</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mix">mix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resolveURL">resolveURL</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uuid">uuid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-$">$</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Interfaces">Interfaces</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-aggregation">aggregation</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/core/router.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+import PubSub from &apos;./pubsub&apos;;
+import RouterHistory from &apos;./router-history&apos;;
+import BaseClass from &apos;../base&apos;;
+
+
+let _instance = null;
+let optionalParam = /\((.*?)\)/g;
+let namedParam = /(\(\?)?:\w+/g;
+let splatParam = /\*\w+/g;
+let escapeRegExp = /[\-{}\[\]+?.,\\\^$|#\s]/g;
+
+
+
+/**
+ * This is the Router class that handles simple routing.
+ * @example
+ * var myRouter = new px.mobile.Router(&apos;app&apos;, {
+ *	routes: {
+ * &apos;/&apos;: routeHandlers.homeRoute,
+ *		 &apos;/about&apos;: routeHandlers.aboutRoute,
+ *		 &apos;/users&apos;: routeHandlers.listRoute,
+ *		 &apos;/users/:action/:id&apos;: routeHandlers.detailRoute
+ *	 }
+ * });
+
+ &quot;route:[name]&quot; (params) &#x2014; Fired by the router when a specific route is matched.
+ &quot;route&quot; (route, params) &#x2014; Fired by the router when any route has been matched.
+ &quot;route&quot; (router, route, params) &#x2014; Fired by history when any route has been matched.
+ */
+export default class Router extends BaseClass {
+
+
+	/**
+	 * Return the ServiceLocator _instance.
+	 * @return the _instance.
+	 */
+	static getInstance() {
+		if (_instance == null) {
+			_instance = new Router();
+		}
+
+		return _instance;
+	}
+
+
+	/**
+	 * This is the Router class constructor
+	 * @constructor
+	 * @param {String} name - The name of the router
+	 * @param {Object} options - The options for the router
+	 */
+	constructor(name, options) {
+		name = name + &apos;.Router&apos;;
+		super(name, options);
+
+		/**
+		 * @type {RouterHistory}
+		 */
+		this.history = new RouterHistory();
+
+		/**
+		 * @type {Object} Initial routes
+		 */
+		this.routes = {
+
+		};
+
+		this.urlPrefix = &apos;#&apos;;
+		this.mixin(options);
+		this.started = false;
+		this._setRegexRoutes();
+
+		return this;
+	}
+
+	listen() {
+		var self = this;
+		var current = this.history.getFragment();
+		var fn = function() {
+			if (current !== self.history.getFragment()) {
+				current = self.history.getFragment();
+				self.check(current);
+			}
+		};
+		clearInterval(this.interval);
+		this.interval = setInterval(fn, 50);
+		return this;
+	}
+
+	check(f) {
+		var fragment = f || this.history.getFragment();
+
+		for (var i = 0; i &lt; this.routesRegex.length; i++) {
+			var match = fragment.match(this.routesRegex[i].regexp);
+			if (match) {
+				match.shift();
+				this.routesRegex[i].success.apply({}, match);
+				return this;
+			}
+		}
+		return this;
+	}
+
+	/**
+	 * Handle starting the router and setting up listeners.
+	 */
+	start() {
+		this.log.logApi(&apos;2. start&apos;, this);
+		if (&apos;onhashchange&apos; in window) {
+			this.log.logApi(&apos;3. onhashchange&apos;, &apos;The browser supports the hashchange event!&apos;);
+			this.started = true;
+			window.addEventListener(&apos;hashchange&apos;, (e) =&gt; {
+				this._handleRoute(e);
+			}, this);
+
+		} else {
+			//console.error(&apos;Hashchange not availble&apos;);
+		}
+		return this;
+	}
+
+	/**
+	 * Execute a route handler with the provided parameters.
+	 * @param {Function} callback - The callback function to invoke
+	 * @param {*} args - The arguments to pass to the callback
+	 * @param {String} name - The name of the route
+	 */
+	execute(callback, args, name) {
+		//PubSub.emit(name, args);
+		this.log.logApi(&apos;execute =&gt;&apos; + name, args);
+		if (callback) {
+			callback.apply(this, args);
+		}
+		return this;
+	}
+
+
+	/**
+	 * Navigate to a route passing options
+	 * @example
+	 * myRouter.navigate(&apos;/login&apos;);
+	 * @param {String} route - The route to Navigate to
+	 * @param {Object} options - The options to pass to the route handler
+	 */
+	navigate(route, options) {
+		this.log.logApi(&apos;navigate =&gt;&apos; + route, options);
+		/*
+		PubSub.emit(&apos;route:before&apos;, {
+			route, options
+		});
+*/
+		this.history.go(route, options);
+
+		return this;
+	}
+
+	/**
+	 * Trigger callback when route is found
+	 * @example
+	 *	myRouter.on(&apos;/users/:action/:id&apos;, function(req, res) {
+	 * 		expect(req).toBeDefined();
+	 * 		expect(res).toBeDefined();
+	 * 		expect(req.url).toBe(window.location.origin + &apos;/users/edit/99&apos;);
+	 * 		expect(req.pathname).toBe(&apos;/users/edit/99&apos;);
+	 * 		expect(req.params.action).toBe(&apos;edit&apos;);
+	 * 		expect(req.params.id).toBe(&apos;99&apos;);
+	 * });
+	 * myRouter.navigate(&apos;/users/edit/99&apos;, {
+	 * 		data: testObj
+	 * });
+	 * @param {String} route - The route to watch
+	 * @param {Function} options - The route options
+	 */
+	on(route, options) {
+		this.subscribe(route, options);
+		this.log.logApi(&apos;5. on -&apos; + route, options);
+		this.routes[route] = options;
+		this._setRegexRoutes();
+		return this;
+	}
+
+	/**
+	 * Promise based route handler, use this to add routes that resolve a promise when matched.
+	 * @param {String} route - The route to match.
+	 * @return {Promise} A promise that is resolved when matched.
+	 */
+	when(route) {
+		this.log.logApi(&apos;4. when&apos;, route);
+		var _this = this;
+		return new Promise(function(resolve, reject) {
+			_this.on(route, {
+				callback: function(req, res) {
+					resolve(req, res);
+				}
+			});
+		});
+	}
+
+
+	/**
+	 * Manually bind a single named route to a callback. For example:
+	 *
+	 * // Matches #page/10, passing &quot;10&quot;
+	 * this.route(&quot;page/:number&quot;, &quot;page&quot;, function(number){ ... });
+	 *
+	 * // Matches /117-a/b/c/open, passing &quot;117-a/b/c&quot; to this.open
+	 * this.route(/^(.*?)\/open$/, &quot;open&quot;);
+	 */
+	route(route, name, callback) {
+		this.log.logApi(&apos;route&apos;, route);
+		return this;
+	}
+
+	/**
+	 * I handle the routing when the location.hash changes.
+	 */
+	_handleRoute(e) {
+		var _this = this;
+		this.log.logApi(&apos;_handleRoute&apos;, e);
+		var _hash = location.hash.replace(/^#\/|\/$/gi, &apos;/&apos;);
+		var parser = document.createElement(&apos;a&apos;);
+		parser.href = _hash;
+		var _routeObj = null;
+		var res = {};
+		var req = {
+			hostname: parser.hostname,
+			host: parser.host,
+			port: parser.port,
+			protocol: parser.protocol,
+			pathname: parser.pathname,
+			hash: parser.hash,
+			url: parser.href,
+			query: parser.search,
+			params: {}, //needs to be routes named params keys and value the values
+			data: {} //Needs to be any other data sent along
+		};
+
+		req.query = this._getUrlQuery(parser.href);
+
+		//Loop each regex route and match against hash, if match, invoke route handler function.
+		for (var i = 0; i &lt; this.routesRegex.length; i++) {
+			_routeObj = this.routesRegex[i];
+
+			//Test if route matches registered route
+			if (_routeObj.regexp.test(_hash)) {
+				_routeObj.current = _hash;
+
+				_routeObj = this._setRouteParams(_routeObj);
+
+				//setup request params / and data
+				req.params = _routeObj.params;
+
+				//Log
+				this.log.logApi(_hash, _routeObj);
+
+
+				_this.publish(&apos;route:change&apos;, {
+					_routeObj, req, res
+				});
+
+				//Execute route handler
+				this.execute(_routeObj.success, [req, res], _hash);
+			} else {
+
+				this.execute(_routeObj.error, [req, res], _hash);
+			}
+		}
+	}
+
+	/**
+	 * I handle building the regular expressions from the route patterns.
+	 */
+	_setRegexRoutes() {
+		var _out = [],
+			_routeParams = [],
+			_reg, _routeObj;
+
+		var routeHandler = null;
+		var routeErrorHandler = function() {};
+		var routeSuccessHandler = function() {};
+		var routeResolver = null;
+
+		this.log.logApi(&apos;1. registerRoutes&apos;, this.routes);
+		for (var _route in this.routes) {
+
+
+			// TODO: Route handler can be a function or object
+			if (this.utils.type(this.routes[_route]) === &apos;function&apos;) {
+				routeSuccessHandler = this.routes[_route];
+			}
+
+			// TODO:	If object, make sure callback prop exists,
+			if (this.utils.type(this.routes[_route]) === &apos;object&apos;) {
+
+				if (this.routes[_route].error) {
+					routeErrorHandler.bind(this.routes[_route].error);
+				}
+				if (this.routes[_route].success) {
+					routeSuccessHandler.bind(this.routes[_route].success);
+				}
+
+
+
+				console.warn(&apos;Found route callback&apos;);
+
+				if (this.routes[_route].resolve) {
+					routeSuccessHandler = this.routes[_route].resolve;
+					console.warn(&apos;Found route resolver&apos;);
+				}
+			}
+
+			// TODO: if object.resolve (Ensure objects key is added to params once resolved.)
+			_routeParams = _route.replace(&apos;/&apos;, &apos;&apos;).split(&apos;/&apos;);
+			_reg = this._regexRoute(_route, _routeParams);
+			_routeObj = {
+				regexp: _reg,
+				route: _route,
+				success: routeSuccessHandler,
+				error: routeErrorHandler
+			};
+			_out.push(_routeObj);
+			//this.log.logApi(&apos;setRegexRoutes&apos;, _routeObj);
+		}
+		this.routesRegex = _out;
+		return _out;
+	}
+
+	/**
+	 * I handle taking a regex route pattern and the route and returning the matches key:value pair object.
+	 * @param {Object} routeObj - The route object to set
+	 * @return {Object} A route object map of name/value pairs
+	 */
+	_setRouteParams(routeObj) {
+		var normalized = routeObj.route.replace(/\:/g, &apos;&apos;);
+		var m1 = routeObj.regexp.exec(normalized);
+		var m2 = routeObj.regexp.exec(routeObj.current);
+		var params = {};
+		for (var i = 1; i &lt; m1.length; i++) {
+			params[m1[i]] = m2[i];
+		}
+		routeObj.params = params;
+		return routeObj;
+	}
+
+	/**
+	 * I handle parsing a url string and returning the query object.
+	 * @param {String} url - The url to parse
+	 * @return {Object} A object map of name/value pairs
+	 */
+	_getUrlQuery(url) {
+		var re = /(?:\?|&amp;(?:amp;)?)([^=&amp;#]+)(?:=?([^&amp;#]*))/g,
+			match,
+			params = {};
+
+		if (typeof url === &apos;undefined&apos;) {
+			url = window.location.href;
+		}
+		var decode = function(s) {
+			return decodeURIComponent(s.replace(/\+/g, &apos; &apos;));
+		};
+		while (match = re.exec(url)) {
+			params[decode(match[1])] = decode(match[2]);
+		}
+
+		this.log.logApi(&apos;getUrlQuery&apos;, url);
+		return params;
+	}
+
+	/**
+	 * Create a RegExp Route from a string. Taken from https://github.com/EngineeringMode/Grapnel.js/blob/master/src/grapnel.js#L49
+	 * @example
+		var router = new px.mobile.Router()
+				router._regexRoute(&apos;/users/:action/:id&apos;, [&apos;:action&apos;, &apos;:id&apos;]);
+				=&gt; /^\/users\/(?:([^\/]+?))\/(?:([^\/]+?))\/?$/i
+
+	 * @param {String} path - Path of route
+	 * @param {Array} keys - Array of keys to fill
+	 * @param {Bool} sensitive - Case sensitive comparison
+	 * @param {Bool} strict - Strict mode
+	 * @return {RegExp} A new regular expression
+	 */
+	_regexRoute(path, keys, sensitive, strict) {
+		if (path instanceof RegExp) {
+			return path;
+		}
+		if (path instanceof Array) {
+			path = &apos;(&apos; + path.join(&apos;|&apos;) + &apos;)&apos;;
+		}
+		path = path.concat(strict ? &apos;&apos; : &apos;/?&apos;)
+			.replace(/\/\(/g, &apos;(?:/&apos;)
+			.replace(/\+/g, &apos;__plus__&apos;)
+			.replace(/(\/)?(\.)?:(\w+)(?:(\(.*?\)))?(\?)?/g, function(_, slash, format, key, capture, optional) {
+				keys.push({
+					name: key,
+					optional: !!optional
+				});
+				slash = slash || &apos;&apos;;
+				return &apos;&apos; + (optional ? &apos;&apos; : slash) + &apos;(?:&apos; + (optional ? slash : &apos;&apos;) + (format || &apos;&apos;) + (capture || (
+					format &amp;&amp; &apos;([^/.]+?)&apos; || &apos;([^/]+?)&apos;)) + &apos;)&apos; + (optional || &apos;&apos;);
+			})
+			.replace(/([\/.])/g, &apos;\\$1&apos;)
+			.replace(/__plus__/g, &apos;(.+)&apos;)
+			.replace(/\*/g, &apos;(.*)&apos;);
+
+		return new RegExp(&apos;^&apos; + path + &apos;$&apos;, sensitive ? &apos;&apos; : &apos;i&apos;);
+	}
+
+
+
+	// TODO:
+	/*
+
+	// Set pages classess for animationEnd
+		 animatePages: function (leftPage, rightPage, direction, view) {
+				 // Loading new page
+				 var removeClasses = &apos;page-on-center page-on-right page-on-left&apos;;
+				 if (direction === &apos;to-left&apos;) {
+						 leftPage.removeClass(removeClasses).addClass(&apos;page-from-center-to-left&apos;);
+						 rightPage.removeClass(removeClasses).addClass(&apos;page-from-right-to-center&apos;);
+				 }
+				 // Go back
+				 if (direction === &apos;to-right&apos;) {
+						 leftPage.removeClass(removeClasses).addClass(&apos;page-from-left-to-center&apos;);
+						 rightPage.removeClass(removeClasses).addClass(&apos;page-from-center-to-right&apos;);
+
+				 }
+		 },
+
+	*/
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.3)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

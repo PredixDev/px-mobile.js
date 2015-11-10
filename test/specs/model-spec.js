@@ -1,4 +1,5 @@
-var pxMobile = require('../../dist/px-mobile');
+var DATABASE_URL = 'http://localhost:5984/default';
+
 /** @test {Model} */
 describe('pxMobile.Model', function() {
   var model = null,
@@ -7,7 +8,7 @@ describe('pxMobile.Model', function() {
   before(function() {
     id = 'test-doc-' + pxMobile.utils.uuid();
     model = model = new pxMobile.Model(id, {
-      baseUrl: '/default',
+      baseUrl: DATABASE_URL,
       idField: '_id',
       data: {
         _id: id,

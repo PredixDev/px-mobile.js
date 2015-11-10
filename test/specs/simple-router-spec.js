@@ -1,5 +1,5 @@
 /*global sinon, before*/
-var pxMobile = require('../../dist/px-mobile');
+
 
 describe('Simple Router', function() {
   var testRouter, routerSpies = {};

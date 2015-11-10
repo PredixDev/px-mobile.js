@@ -1,0 +1,397 @@
+{
+  "coverage": "31.49%",
+  "expectCount": 327,
+  "actualCount": 103,
+  "files": {
+    "src/utils/dom.js": {
+      "expectCount": 29,
+      "actualCount": 5,
+      "undocumentLines": [
+        542,
+        123,
+        205,
+        67,
+        44,
+        10,
+        112,
+        134,
+        215,
+        174,
+        38,
+        179,
+        175,
+        33,
+        196,
+        157,
+        143,
+        202,
+        208,
+        199,
+        188,
+        190,
+        95,
+        161
+      ]
+    },
+    "src/ui/app.js": {
+      "expectCount": 12,
+      "actualCount": 5,
+      "undocumentLines": [
+        155,
+        42,
+        44,
+        51,
+        167,
+        48,
+        45
+      ]
+    },
+    "src/base.js": {
+      "expectCount": 6,
+      "actualCount": 2,
+      "undocumentLines": [
+        41,
+        27,
+        37,
+        25
+      ]
+    },
+    "src/ds/collection.js": {
+      "expectCount": 17,
+      "actualCount": 4,
+      "undocumentLines": [
+        52,
+        41,
+        74,
+        103,
+        108,
+        43,
+        49,
+        39,
+        40,
+        44,
+        84,
+        112,
+        98
+      ]
+    },
+    "src/ui/component.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        19
+      ]
+    },
+    "src/core/core.js": {
+      "expectCount": 15,
+      "actualCount": 13,
+      "undocumentLines": [
+        27,
+        26
+      ]
+    },
+    "src/ds/db.js": {
+      "expectCount": 13,
+      "actualCount": 12,
+      "undocumentLines": [
+        41
+      ]
+    },
+    "src/ui/element.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        15,
+        21,
+        3,
+        18,
+        27,
+        31,
+        24
+      ]
+    },
+    "src/ui/elements.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        13,
+        14
+      ]
+    },
+    "src/ds/http.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/utils/interface.js": {
+      "expectCount": 5,
+      "actualCount": 2,
+      "undocumentLines": [
+        16,
+        23,
+        22
+      ]
+    },
+    "src/utils/interfaces.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/utils/log.js": {
+      "expectCount": 14,
+      "actualCount": 4,
+      "undocumentLines": [
+        22,
+        35,
+        21,
+        49,
+        37,
+        60,
+        52,
+        41,
+        36,
+        56
+      ]
+    },
+    "src/ds/model.js": {
+      "expectCount": 21,
+      "actualCount": 1,
+      "undocumentLines": [
+        30,
+        24,
+        82,
+        17,
+        25,
+        107,
+        116,
+        94,
+        56,
+        51,
+        26,
+        33,
+        86,
+        102,
+        27,
+        65,
+        112,
+        77,
+        41,
+        23
+      ]
+    },
+    "src/ui/page.js": {
+      "expectCount": 15,
+      "actualCount": 1,
+      "undocumentLines": [
+        143,
+        9,
+        115,
+        75,
+        103,
+        96,
+        107,
+        138,
+        111,
+        14,
+        85,
+        92,
+        135,
+        100
+      ]
+    },
+    "src/ui/pages.js": {
+      "expectCount": 17,
+      "actualCount": 1,
+      "undocumentLines": [
+        12,
+        13,
+        24,
+        26,
+        18,
+        9,
+        22,
+        49,
+        25,
+        28,
+        43,
+        35,
+        64,
+        53,
+        23,
+        40
+      ]
+    },
+    "src/core/plugins.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        7,
+        8,
+        19,
+        27,
+        37,
+        9
+      ]
+    },
+    "src/core/pubsub.js": {
+      "expectCount": 11,
+      "actualCount": 6,
+      "undocumentLines": [
+        15,
+        110,
+        17,
+        114,
+        35
+      ]
+    },
+    "src/core/router.js": {
+      "expectCount": 17,
+      "actualCount": 11,
+      "undocumentLines": [
+        91,
+        87,
+        77,
+        325,
+        71,
+        69
+      ]
+    },
+    "src/core/router-history.js": {
+      "expectCount": 17,
+      "actualCount": 8,
+      "undocumentLines": [
+        60,
+        19,
+        71,
+        33,
+        27,
+        26,
+        65,
+        29,
+        23
+      ]
+    },
+    "src/core/service-locator.js": {
+      "expectCount": 10,
+      "actualCount": 2,
+      "undocumentLines": [
+        27,
+        28,
+        30,
+        33,
+        59,
+        37,
+        29,
+        49
+      ]
+    },
+    "src/core/simple-router.js": {
+      "expectCount": 21,
+      "actualCount": 10,
+      "undocumentLines": [
+        68,
+        56,
+        87,
+        188,
+        189,
+        52,
+        55,
+        49,
+        46,
+        250,
+        58
+      ]
+    },
+    "src/ui/view.js": {
+      "expectCount": 8,
+      "actualCount": 1,
+      "undocumentLines": [
+        12,
+        18,
+        14,
+        17,
+        15,
+        20,
+        16
+      ]
+    },
+    "src/ui/views.js": {
+      "expectCount": 19,
+      "actualCount": 1,
+      "undocumentLines": [
+        44,
+        40,
+        120,
+        17,
+        36,
+        53,
+        72,
+        68,
+        57,
+        19,
+        76,
+        94,
+        61,
+        116,
+        20,
+        21,
+        23,
+        22
+      ]
+    },
+    "src/utils/utils.js": {
+      "expectCount": 11,
+      "actualCount": 2,
+      "undocumentLines": [
+        112,
+        116,
+        42,
+        67,
+        49,
+        146,
+        135,
+        1,
+        201
+      ]
+    },
+    "src/elements/pm-page.js": {
+      "expectCount": 18,
+      "actualCount": 0,
+      "undocumentLines": [
+        129,
+        135,
+        189,
+        161,
+        6,
+        149,
+        132,
+        142,
+        153,
+        185,
+        5,
+        157,
+        14,
+        122,
+        138,
+        182,
+        193,
+        146
+      ]
+    },
+    "src/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        52
+      ]
+    },
+    "src/components/x-module.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    }
+  }
+}

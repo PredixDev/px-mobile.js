@@ -1,0 +1,1124 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "Interface",
+            "range": [
+              73,
+              82
+            ],
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 7
+              },
+              "end": {
+                "line": 2,
+                "column": 16
+              }
+            }
+          },
+          "range": [
+            73,
+            82
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 7
+            },
+            "end": {
+              "line": 2,
+              "column": 16
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./interface",
+        "raw": "'./interface'",
+        "range": [
+          88,
+          101
+        ],
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 22
+          },
+          "end": {
+            "line": 2,
+            "column": 35
+          }
+        }
+      },
+      "range": [
+        66,
+        102
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 36
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Line",
+          "value": " TODO: All interfaces defined here to ensure modules implement;",
+          "range": [
+            0,
+            65
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 65
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * All interfaces defined here to ensure modules implement;\n * @type {Object}\n ",
+          "range": [
+            104,
+            189
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Interfaces",
+            "range": [
+              196,
+              206
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 6
+              },
+              "end": {
+                "line": 8,
+                "column": 16
+              }
+            }
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [],
+            "range": [
+              209,
+              211
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 19
+              },
+              "end": {
+                "line": 8,
+                "column": 21
+              }
+            }
+          },
+          "range": [
+            196,
+            211
+          ],
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 6
+            },
+            "end": {
+              "line": 8,
+              "column": 21
+            }
+          }
+        }
+      ],
+      "kind": "const",
+      "range": [
+        190,
+        212
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 22
+        }
+      },
+      "leadingComments": [],
+      "trailingComments": [],
+      "name": "_"
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "Interfaces",
+            "range": [
+              347,
+              357
+            ],
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 0
+              },
+              "end": {
+                "line": 15,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "IDBInterface",
+            "range": [
+              358,
+              370
+            ],
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 11
+              },
+              "end": {
+                "line": 15,
+                "column": 23
+              }
+            }
+          },
+          "range": [
+            347,
+            370
+          ],
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 0
+            },
+            "end": {
+              "line": 15,
+              "column": 23
+            }
+          }
+        },
+        "right": {
+          "type": "NewExpression",
+          "callee": {
+            "type": "Identifier",
+            "name": "Interface",
+            "range": [
+              377,
+              386
+            ],
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 30
+              },
+              "end": {
+                "line": 15,
+                "column": 39
+              }
+            }
+          },
+          "arguments": [
+            {
+              "type": "Literal",
+              "value": "IDBInterface",
+              "raw": "'IDBInterface'",
+              "range": [
+                387,
+                401
+              ],
+              "loc": {
+                "start": {
+                  "line": 15,
+                  "column": 40
+                },
+                "end": {
+                  "line": 15,
+                  "column": 54
+                }
+              }
+            },
+            {
+              "type": "ArrayExpression",
+              "elements": [
+                {
+                  "type": "Literal",
+                  "value": "getAttachment",
+                  "raw": "'getAttachment'",
+                  "range": [
+                    406,
+                    421
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 16,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 16,
+                      "column": 16
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "saveAttachment",
+                  "raw": "'saveAttachment'",
+                  "range": [
+                    423,
+                    439
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 16,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 16,
+                      "column": 34
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "get",
+                  "raw": "'get'",
+                  "range": [
+                    442,
+                    447
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 6
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "put",
+                  "raw": "'put'",
+                  "range": [
+                    449,
+                    454
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 8
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 13
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "post",
+                  "raw": "'post'",
+                  "range": [
+                    456,
+                    462
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 15
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 21
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "remove",
+                  "raw": "'remove'",
+                  "range": [
+                    464,
+                    472
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 17,
+                      "column": 23
+                    },
+                    "end": {
+                      "line": 17,
+                      "column": 31
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "allDocs",
+                  "raw": "'allDocs'",
+                  "range": [
+                    475,
+                    484
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 18,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 10
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "bulkDocs",
+                  "raw": "'bulkDocs'",
+                  "range": [
+                    486,
+                    496
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 18,
+                      "column": 12
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 22
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "changes",
+                  "raw": "'changes'",
+                  "range": [
+                    498,
+                    507
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 18,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 33
+                    }
+                  }
+                }
+              ],
+              "range": [
+                403,
+                509
+              ],
+              "loc": {
+                "start": {
+                  "line": 15,
+                  "column": 56
+                },
+                "end": {
+                  "line": 19,
+                  "column": 1
+                }
+              }
+            }
+          ],
+          "range": [
+            373,
+            510
+          ],
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 26
+            },
+            "end": {
+              "line": 19,
+              "column": 2
+            }
+          }
+        },
+        "range": [
+          347,
+          510
+        ],
+        "loc": {
+          "start": {
+            "line": 15,
+            "column": 0
+          },
+          "end": {
+            "line": 19,
+            "column": 2
+          }
+        }
+      },
+      "range": [
+        347,
+        511
+      ],
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Database interface - All database adapters must implement this interface.\n * @interface IDBInterface\n * @type {Interface}\n ",
+          "range": [
+            214,
+            346
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 14,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * HTTP interface - All HTTP adapters must implement this interface.\n * @interface IHTTPInterface\n * @type {Interface}\n ",
+          "range": [
+            512,
+            638
+          ],
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "Interfaces",
+            "range": [
+              639,
+              649
+            ],
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 0
+              },
+              "end": {
+                "line": 25,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "IHTTPInterface",
+            "range": [
+              650,
+              664
+            ],
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 11
+              },
+              "end": {
+                "line": 25,
+                "column": 25
+              }
+            }
+          },
+          "range": [
+            639,
+            664
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 0
+            },
+            "end": {
+              "line": 25,
+              "column": 25
+            }
+          }
+        },
+        "right": {
+          "type": "NewExpression",
+          "callee": {
+            "type": "Identifier",
+            "name": "Interface",
+            "range": [
+              671,
+              680
+            ],
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 32
+              },
+              "end": {
+                "line": 25,
+                "column": 41
+              }
+            }
+          },
+          "arguments": [
+            {
+              "type": "Literal",
+              "value": "IHTTPInterface",
+              "raw": "'IHTTPInterface'",
+              "range": [
+                681,
+                697
+              ],
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 42
+                },
+                "end": {
+                  "line": 25,
+                  "column": 58
+                }
+              }
+            },
+            {
+              "type": "ArrayExpression",
+              "elements": [
+                {
+                  "type": "Literal",
+                  "value": "get",
+                  "raw": "'get'",
+                  "range": [
+                    702,
+                    707
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 6
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "put",
+                  "raw": "'put'",
+                  "range": [
+                    709,
+                    714
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 8
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 13
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "post",
+                  "raw": "'post'",
+                  "range": [
+                    716,
+                    722
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 15
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 21
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "delete",
+                  "raw": "'delete'",
+                  "range": [
+                    724,
+                    732
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 23
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 31
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "head",
+                  "raw": "'head'",
+                  "range": [
+                    734,
+                    740
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 33
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 39
+                    }
+                  }
+                },
+                {
+                  "type": "Literal",
+                  "value": "request",
+                  "raw": "'request'",
+                  "range": [
+                    742,
+                    751
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 41
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 50
+                    }
+                  }
+                }
+              ],
+              "range": [
+                699,
+                753
+              ],
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 60
+                },
+                "end": {
+                  "line": 27,
+                  "column": 1
+                }
+              }
+            }
+          ],
+          "range": [
+            667,
+            754
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 28
+            },
+            "end": {
+              "line": 27,
+              "column": 2
+            }
+          }
+        },
+        "range": [
+          639,
+          754
+        ],
+        "loc": {
+          "start": {
+            "line": 25,
+            "column": 0
+          },
+          "end": {
+            "line": 27,
+            "column": 2
+          }
+        }
+      },
+      "range": [
+        639,
+        755
+      ],
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 3
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * HTTP interface - All HTTP adapters must implement this interface.\n * @interface IHTTPInterface\n * @type {Interface}\n ",
+          "range": [
+            512,
+            638
+          ],
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "declaration": {
+        "type": "Identifier",
+        "name": "Interfaces",
+        "range": [
+          772,
+          782
+        ],
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 15
+          },
+          "end": {
+            "line": 29,
+            "column": 25
+          }
+        }
+      },
+      "range": [
+        757,
+        783
+      ],
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 29,
+          "column": 26
+        }
+      },
+      "name": "_",
+      "leadingComments": [],
+      "trailingComments": []
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "Interfaces",
+              "range": [
+                196,
+                206
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 6
+                },
+                "end": {
+                  "line": 8,
+                  "column": 16
+                }
+              }
+            },
+            "init": {
+              "type": "ObjectExpression",
+              "properties": [],
+              "range": [
+                209,
+                211
+              ],
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 19
+                },
+                "end": {
+                  "line": 8,
+                  "column": 21
+                }
+              }
+            },
+            "range": [
+              196,
+              211
+            ],
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 6
+              },
+              "end": {
+                "line": 8,
+                "column": 21
+              }
+            }
+          }
+        ],
+        "kind": "const",
+        "range": [
+          190,
+          212
+        ],
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 0
+          },
+          "end": {
+            "line": 8,
+            "column": 22
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * All interfaces defined here to ensure modules implement;\n * @type {Object}\n ",
+            "range": [
+              104,
+              189
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Database interface - All database adapters must implement this interface.\n * @interface IDBInterface\n * @type {Interface}\n ",
+            "range": [
+              214,
+              346
+            ],
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 0
+              },
+              "end": {
+                "line": 14,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      "range": [
+        757,
+        783
+      ],
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 29,
+          "column": 26
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    66,
+    783
+  ],
+  "loc": {
+    "start": {
+      "line": 2,
+      "column": 0
+    },
+    "end": {
+      "line": 29,
+      "column": 26
+    }
+  },
+  "comments": [
+    {
+      "type": "Line",
+      "value": " TODO: All interfaces defined here to ensure modules implement;",
+      "range": [
+        0,
+        65
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 65
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * All interfaces defined here to ensure modules implement;\n * @type {Object}\n ",
+      "range": [
+        104,
+        189
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * Database interface - All database adapters must implement this interface.\n * @interface IDBInterface\n * @type {Interface}\n ",
+      "range": [
+        214,
+        346
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * HTTP interface - All HTTP adapters must implement this interface.\n * @interface IHTTPInterface\n * @type {Interface}\n ",
+      "range": [
+        512,
+        638
+      ],
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 3
+        }
+      }
+    }
+  ]
+}

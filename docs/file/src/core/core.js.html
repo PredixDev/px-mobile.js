@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/core/core.js | px-mobile.js API API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="git+https://github.com/jonniespratley/px-mobilejs.git">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/base.js~BaseClass.html">BaseClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pxMobile">pxMobile</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/x-module.js~xModule.html">xModule</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/core.js~Core.html">Core</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/plugins.js~Plugins.html">Plugins</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/pubsub.js~PubSub.html">PubSub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/router-history.js~RouterHistory.html">RouterHistory</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/router.js~Router.html">Router</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/service-locator.js~ServiceLocator.html">ServiceLocator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/simple-router.js~SimpleRouter.html">SimpleRouter</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">ds</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/collection.js~Collection.html">Collection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/db.js~DB.html">DB</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/http.js~HTTP.html">HTTP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ds/model.js~Model.html">Model</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">elements</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/elements/pm-page.js~pmPage.html">pmPage</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">ui</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/app.js~App.html">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/component.js~Component.html">Component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/element.js~Element.html">Element</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/elements.js~Elements.html">Elements</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/pages.js~Pages.html">Pages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/view.js~View.html">View</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ui/views.js~Views.html">Views</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/dom.js~DOM.html">DOM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/interface.js~Interface.html">Interface</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/log.js~Logger.html">Logger</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dom">dom</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addMixin">addMixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debounce">debounce</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extend">extend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendClass">extendClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extendDeep">extendDeep</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mix">mix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mixin">mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resolveURL">resolveURL</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uuid">uuid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-$">$</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Interfaces">Interfaces</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-aggregation">aggregation</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/core/core.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+var extensions = {};
+import BaseClass from &apos;../base&apos;;
+/**
+ * The Core class.
+ * @example
+ Core.register(&apos;some-module&apos;, function(sandbox) {
+	 return {
+		 init: function() {
+			 console.log(&apos;starting some-module&apos;);
+		 }
+	 }
+ });
+ Core.start(&apos;some-module&apos;);
+ * @class Core
+ */
+export default class Core extends BaseClass {
+	/**
+	 * The constructor of Core
+	 *
+	 * @class Core
+	 * @constructor
+	 */
+	constructor(name, options) {
+		super(name, options);
+		this.modules = {};
+		this.messages = {
+			&apos;!start&apos;: &apos;Could not start the given module, its either already started or is not registered: &apos;,
+			&apos;!stop&apos;: &apos;Could not stop the given module, its either already stopped or is not registered: &apos;,
+			&apos;!!module&apos;: &apos;Cant register an already registered module: &apos;,
+			&apos;!!listen&apos;: &apos;Theres already an listen handler to the notification: &apos;
+		};
+		return this;
+	}
+
+	/**
+	 * Registers a new module
+	 *
+	 * @method register
+	 * @param {string} module the name of the new module
+	 * @param {function} constructor the constructor of the new module
+	 */
+	register(module, constructor) {
+		if (this.modules[module]) {
+			this.helpers.err(&apos;!!module&apos;, module);
+			return false;
+		}
+		this.modules[module] = {
+			constructor: constructor,
+			instance: null
+		};
+	}
+
+	/**
+	 * Check if the module is already initialized or not
+	 *
+	 * @method moduleCheck
+	 * @param {string} module the name of the module that will be checked
+	 * @param {boolean} destroy check if the module exists, but is already destroyed
+	 * @return {boolean} if the module exists or already have an instance
+	 */
+	moduleCheck(module, destroy) {
+		if (destroy) {
+			return !module || !module.instance;
+		}
+
+		return !module || module.instance;
+	}
+
+	/**
+	 * Starts a registered module, if no module is passed, it starts all modules
+	 *
+	 * @method start
+	 * @param {string} module the name of the module
+	 */
+	start(module) {
+		if (!module) {
+			return this.startAll();
+		}
+
+		var cModule = this.modules[module],
+			el = this.getElement(module);
+
+		if (this.moduleCheck(cModule)) {
+			this.helpers.err(&apos;!start&apos;, module);
+			return false;
+		}
+
+		cModule.instance = new cModule.constructor(new this.Sandbox(module));
+
+		// attachs the element to the instance of the module
+		cModule.instance.el = el;
+
+		if (cModule.instance.init) {
+			return cModule.instance.init();
+		}
+	}
+
+
+	/**
+	 * Stops a registered module
+	 *
+	 * @method start
+	 * @param {string} module the name of the module
+	 */
+	stop(module) {
+		if (!module) {
+			return this.stopAll();
+		}
+
+		var cModule = this.modules[module],
+			stopReturn;
+
+		if (this.moduleCheck(cModule, true)) {
+			this.helpers.err(&apos;!stop&apos;, module);
+			return false;
+		}
+
+		if (cModule.instance.destroy) {
+			stopReturn = cModule.instance.destroy();
+		}
+
+		cModule.instance = null;
+
+		this.Sandbox.clearNotifications(module);
+
+		return stopReturn;
+	}
+
+	/**
+	 * Stop all started modules
+	 *
+	 * @method stopAll
+	 */
+	stopAll() {
+		this.xAll(&apos;stop&apos;);
+	}
+
+	/**
+	 * Stop all started modules
+	 *
+	 * @method stopAll
+	 */
+	startAll() {
+		this.xAll(&apos;start&apos;);
+	}
+
+	/**
+	 * Helper for startAll and stopAll
+	 *
+	 * @method xAll
+	 * @param {string} method the method that will be triggered
+	 */
+	xAll(method) {
+			for (var module in this.modules) {
+				if (this.modules.hasOwnProperty(module)) {
+					this[method](module);
+				}
+			}
+		}
+
+		/**
+
+		 * Gets an element by ID to attach to the module instance
+		 *
+		 * @method getElement
+		 * @param {string} id the id of the main element in the module
+		 */
+	getElement(id) {
+		var el = document.getElementById(id);
+
+		// this fixes some blackberry, opera and IE possible bugs
+		return (el &amp;&amp; el.id === id &amp;&amp; el.parentElement) ? el : null;
+	}
+
+
+	/**
+	 * helpers/err.js - Handles error messages
+	 *
+	 * @method err
+	 * @param {string} error the type of the error
+	 * @param {function} message the complementary message to the error
+	 */
+	err(error, message) {
+		this.helpers.log(`${err.messages[error]} - ${message}`);
+	}
+
+	/**
+	 * Extends core functionalities
+	 *
+	 * @method extend
+	 * @param {string} name the name of the extension
+	 * @param {function | array | boolean | string | number} implementation what the extension does
+	 */
+	static extend(name, implementation) {
+		extensions[name] = implementation;
+	}
+
+	/**
+	 * returns the extension
+	 *
+	 * @method getExtension
+	 * @param {string} extension the name of the extension
+	 * @return {function | array | boolean | string | number} the implementation of the extension
+	 */
+	static getExtension(extension) {
+		return extensions[extension] || null;
+	}
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.3)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
