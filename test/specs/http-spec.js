@@ -1,3 +1,7 @@
+import pxMobile from '../../src/index';
+var sinon = require('sinon');
+var assert = require('chai').assert;
+
 /** @test {HTTP} */
 describe('pxMobile.HTTP', function() {
   var DATABASE_URL = 'http://localhost:5984/default';

@@ -1,3 +1,5 @@
+import pxMobile from '../../src/index';
+
 if (typeof process === 'object') {
   // Initialize node environment
   global.expect = require('chai').expect;

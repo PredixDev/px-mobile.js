@@ -1,3 +1,4 @@
+import pxMobile from '../../src/index';
  /** @test {BaseClass} */
  describe('pxMobile.BaseClass', function() {
    var myClass = new pxMobile.BaseClass('BaseClass');

@@ -1,3 +1,7 @@
+import pxMobile from '../../src/index';
+var sinon = require('sinon');
+var assert = require('chai').assert;
+
  /** @test {utils} */
  describe('pxMobile.utils', function() {
    it('should be defined', function() {

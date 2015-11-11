@@ -1,3 +1,7 @@
+import pxMobile from '../../src/index';
+var sinon = require('sinon');
+var assert = require('chai').assert;
+
  /** @test {Router} */
  describe('pxMobile.Router', function() {
    var app = new pxMobile.App(),

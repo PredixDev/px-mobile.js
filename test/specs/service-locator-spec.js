@@ -1,3 +1,7 @@
+import pxMobile from '../../src/index';
+var sinon = require('sinon');
+var assert = require('chai').assert;
+
 /** @test {ServiceLocator} */
 describe('Service Locator', function() {
   var app, myService;

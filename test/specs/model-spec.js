@@ -1,3 +1,5 @@
+import pxMobile from '../../src/index';
+var sinon = require('sinon');
 var DATABASE_URL = 'http://localhost:5984/default';
 
 /** @test {Model} */

@@ -1,6 +1,7 @@
+import pxMobile from '../../src/index';
+
  /** @test {Core} */
  describe('pxMobile.Core', function() {
-
    var sandbox = new pxMobile.Core('sandbox', {});
    var mockService = {
      method1: sinon.spy()

@@ -1,8 +1,10 @@
+  function failSpec(done) {
+    assert.fail();
+    return done();
+  }
  function PouchDbAdapter(name, options) {
-   // TODO: PouchDB Adapter
    PouchDB.debug('*');
    var _db = new PouchDB(name, options);
-
    var adapter = {
      parseJSON: function(resp) {
        console.log('Pouchdb response', resp);
@@ -21,17 +23,12 @@
        return _db.info().then(this.parseJSON);
      }
    };
-
-
    return adapter;
 
  }
 
-
  /** @test {DB} */
  describe('pxMobile.DB', function() {
-
-
 
    var DATABASE_URL = 'http://localhost:5984/default';
    var TEST_IDS = window.TEST_IDS = [];
