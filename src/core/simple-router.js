@@ -74,7 +74,7 @@ export default class SimpleRouter extends BaseClass {
 		}
 		return this;
 	}
-	
+
 	clearSlashes(path) {
 		return path.toString().replace(/\/$/, '').replace(/^\//, '');
 	}
@@ -110,7 +110,7 @@ export default class SimpleRouter extends BaseClass {
 				re: re,
 				handler: handler
 			});
-			this.subscribe(re, handler);
+			this.on(re, handler);
 
 			/*
 						this.routes[re] = {
@@ -192,13 +192,14 @@ export default class SimpleRouter extends BaseClass {
 	 */
 	navigate(path) {
 		path = path ? path : '';
-		this.publish(path);
+
 		if (this.mode === 'history') {
 			history.pushState(null, null, this.root + this.clearSlashes(path));
 		} else {
 			window.location.href.match(/#(.*)$/);
 			window.location.href = window.location.href.replace(/#(.*)$/, '') + '#' + path;
 		}
+		this.emit(path);
 		return this;
 	}
 

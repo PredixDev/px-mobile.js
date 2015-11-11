@@ -35,7 +35,7 @@
     "babel": "babel $npm_package_config_dist/$npm_package_name.js --out-file $npm_package_config_dist/$npm_package_name.js --source-maps",
     "browserify": "browserify --standalone $npm_package_name -e  src/index.js -t babelify -o dist/px-mobile.js",
     "browserify:specs": "browserify test/index.js -o test/specs.js",
-    "build": "npm run rollup && npm run babel && npm run test",
+    "build": "npm run rollup && npm run browserify",
     "check": "npm run lint -s && dependency-check package.json --entry src",
     "clean": "rimraf dist",
     "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
@@ -46,7 +46,7 @@
     "major": "npm version major && npm publish",
     "minor": "npm version minor && npm publish",
     "patch": "npm version patch && npm publish",
-    "postbuild": "npm run test -s",
+    "postbuild": "npm run test",
     "postcoveralls": "rimraf ./coverage",
     "postpublish": "git push origin master --follow-tags",
     "prebuild1": "npm run check -s && npm run clean -s",
@@ -61,8 +61,7 @@
   "browserify": {
     "transform": [
       [
-        "babelify",
-        {
+        "babelify", {
           "optional": [
             "es7.asyncFunctions"
           ]

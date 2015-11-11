@@ -10,14 +10,17 @@ module.exports = function(config) {
       'sinon'
     ],
     files: [
-      //'bower_components/es6-shim/es6-shim.min.js',
+      'bower_components/es6-shim/es6-shim.js',
     //  'bower_components/es6-shim/es6-sham.min.js',
-      //'bower_components/fetch/fetch.js',
+      'bower_components/fetch/fetch.js',
       'dist/px-mobile.js',
       'src/**/*.js',
       'test/**/*-spec.js'
     ],
-    browsers: ['PhantomJS'],
+    browsers: [
+      'Chrome',
+      //'PhantomJS'
+    ],
     reporters: ['spec', 'progress', 'coverage'],
     preprocessors: {
       'src/**/*.js': ['browserify', 'coverage'],
@@ -39,7 +42,7 @@ module.exports = function(config) {
       transform: ['babelify']
     },
     proxies: {
-      '/default': 'http://localhost:5984',
+      '/default': 'http://localhost:4985/default',
       '/predixgo': 'http://localhost:4985'
     }
 

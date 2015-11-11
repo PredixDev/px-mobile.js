@@ -2,8 +2,8 @@
 'use strict';
 import BaseClass from '../base';
 
-var fetch = require('fetch');
-var Promise = require('promise');
+//var fetch = require('fetch');
+//var Promise = require('promise');
 
 /**
  * HTTP class provides an abstraction layer for HTTP calls.
@@ -136,7 +136,7 @@ export default class HTTP extends BaseClass {
 			delete options.params;
 		}
 
-		//this.log.logApi(`request => ${url}`, config);
+		this.log.logApi(`request => ${url}`, config);
 		this.log.logHttp(config.method, url);
 
 		let benchmark = this.log.logTime('request');

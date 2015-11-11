@@ -36,7 +36,7 @@ describe('pxMobile.DOM', function() {
     assert.equal(el.hasClass('testing'), false);
   });
 
-  it('Element.attr(name, value) - should get/set the attribute on the element.', function() {
+  xit('Element.attr(name, value) - should get/set the attribute on the element.', function() {
     el.attr('title', 'Test Element');
     expect(el.attr('title')).to.be('Test Element');
   });

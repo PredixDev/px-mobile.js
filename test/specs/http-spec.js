@@ -6,7 +6,9 @@ describe('pxMobile.HTTP', function() {
   var DATABASE_URL = '/default';
   var http = null,
     mockDoc = {};
+
   before(function() {
+    mockDoc._id = 'test-doc-' + Date.now();
     http = new pxMobile.HTTP('http1', {
       baseUrl: DATABASE_URL
     });
@@ -39,7 +41,6 @@ describe('pxMobile.HTTP', function() {
   });
 
   it('post(url, options) - should resolve promise on success', function(done) {
-    mockDoc._id = 'test-doc-' + Date.now();
     http.put('/' + mockDoc._id, mockDoc).then(function(resp) {
       assert.equal(resp.status, 201);
       done();
