@@ -60,7 +60,7 @@ export default class HTTP extends BaseClass {
 				throw new Error('Must pass a response object to parseJSON!');
 			}
 			if (response.status >= 200 && response.status < 300) {
-				if (response.headers.get('Content-Type') !== 'text/html') {
+				if (response.headers.get('Content-Type') === 'application/json') {
 					response.json().then(function(json) {
 						response.data = json;
 						resolve(response);

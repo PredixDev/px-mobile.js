@@ -270,17 +270,17 @@
                 db.saveAttachment(resp.data._id, resp.data._rev, 'file.html', myBlob.type,
                   myBlob).then(function(resp) {
                   assert.equal(resp.ok, true);
-                  TEST_IDS.concat(resp.data);
                   done();
                 }, failSpec);
               }, failSpec);
             }, failSpec);
 
+
           });
 
         /** @test {DB#getAttachment} */
         it('getAttachment(id, filename) - should return file attachment', function(done) {
-          db.getAttachment(testAttachmentDoc, 'file.html').then(function(resp) {
+          db.getAttachment(testAttachmentDoc, 'file.txt').then(function(resp) {
             assert.equal(resp.ok, true);
             db.get(testAttachmentDoc).then(function(res) {
               assert.equal(res.ok, true);

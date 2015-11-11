@@ -4,7 +4,7 @@ module.exports = function(config) {
   config.set({
     basePath: '',
     frameworks: [
-//      'es6-shim',
+      //'es6-shim',
       'browserify',
       'mocha',
       'chai',
@@ -12,6 +12,7 @@ module.exports = function(config) {
     ],
     files: [
       'node_modules/babel-core/browser-polyfill.js',
+      'bower_components/es6-shim/es6-sham.js',
       'bower_components/es6-shim/es6-shim.js',
     //  'bower_components/es6-shim/es6-sham.min.js',
       'bower_components/fetch/fetch.js',
@@ -20,13 +21,13 @@ module.exports = function(config) {
       'test/**/*-spec.js'
     ],
     browsers: [
-      'Chrome',
-      //'PhantomJS'
+      //'Chrome',
+      'PhantomJS'
     ],
-    reporters: ['spec', 'progress', 'coverage'],
+    reporters: ['progress', 'coverage', 'spec'],
     preprocessors: {
       //'src/**/*.js': ['babel', 'coverage'],
-      'src/**/*.js': ['browserify'],
+      'src/**/*.js': ['browserify', 'coverage'],
       //'src/!(*spec).js': ['babel', 'coverage'],
       'test/**/*-spec.js': ['browserify']
       //'test/**/*-spec.js': ['babel']
@@ -44,8 +45,8 @@ module.exports = function(config) {
           'src/**/*.js': 'isparta'
       },
       reporters: [
-        { type: 'html' },
-        { type: 'cobertura'}
+        { type: 'text' },
+        { type: 'html' }
       ],
       dir: 'coverage/'
     },
@@ -54,10 +55,10 @@ module.exports = function(config) {
     //  transform: ['babelify'],
       transform: [
         'babelify',
-        'brfs',
-        istanbul({
-          ignore: ['**/node_modules/**', '**/test/**'],
-        })
+        //'brfs',
+        /*istanbul({
+
+        })*/
       ],
     },
     proxies: {
