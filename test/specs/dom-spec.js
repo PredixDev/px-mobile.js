@@ -1,6 +1,5 @@
 import pxMobile from '../../src/index';
-var sinon = require('sinon');
-var assert = require('chai').assert;
+
 
 /** @test {DOM} */
 describe('pxMobile.DOM', function() {

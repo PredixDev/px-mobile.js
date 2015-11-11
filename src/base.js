@@ -31,12 +31,38 @@ export default class BaseClass {
 		});
 		this.mixin(new PubSub(name, options));
 		this.mixin(options);
+
+		this.events = {};
 		return this;
 	}
 
 	mixin(klass) {
 		this.utils.addMixin(klass, this);
 	}
+
+	on(type, listener){
+	 if(!this.events[type]){
+		 this.events[type] = [listener];
+	 } else {
+		 this.events[type].push(listener);
+	 }
+ }
+
+ emit(type, data){
+	 var evt = this.events[type];
+	 if (!evt) {
+		 return;
+	 }
+	 var args = Array.prototype.slice.call(arguments, 1);
+	 for (var i = 0; i < evt.length; i++) {
+		 debounce(evt[i]);
+	 }
+	 function debounce (e) {
+		 setTimeout(() => {
+			 e.apply(this, args);
+		 }, 0);
+	 }
+ }
 
 	static extend(obj) {
 		return utils.extendClass(obj, this);

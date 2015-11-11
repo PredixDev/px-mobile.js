@@ -20,9 +20,8 @@ export default class Views extends BaseClass {
 		this.selected = options.selected || 0;
 		this.selectedView = {};
 		this.views = [];
-		this.viewMap = new Map();
+		this.viewMap = {};
 		//	this.router = new Router(options);
-
 		if (options.views) {
 			options.views.forEach((view) => {
 				this.add(view);
@@ -46,21 +45,21 @@ export default class Views extends BaseClass {
 		view.index = this.views.length;
 		this[view.id] = view;
 		this.views.push(view);
-		this.viewMap.set(view.id, view);
+		this.viewMap[view.id] = view;
 		return this;
 	}
 
 	get(key) {
-		return this.viewMap.get(key);
+		return this.viewMap[key];
 	}
 
 	getViews() {
-		return this.viewMap.entries();
+		return this.viewMap;
 	}
 
 	selectView(key) {
 		this.log.logApi('Views.selectView()', key);
-		this.selectedView = this.viewMap.get(key);
+		this.selectedView = this.viewMap[key];
 		this.selected = this.views.indexOf(this.selectedView);
 		return this;
 	}
@@ -78,6 +77,7 @@ export default class Views extends BaseClass {
 			len = items.length,
 			counter = this.selected,
 			index = this.selected + 1;
+
 		counter++;
 
 		if (counter >= len) {

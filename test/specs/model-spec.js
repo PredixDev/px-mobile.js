@@ -60,11 +60,11 @@ describe('pxMobile.Model', function() {
     model.set({
       'title': 'test'
     });
-    model.subscribe('change', function(d) {
+    model.on('change', function(d) {
       assert.ok(d);
       done();
     });
-    model.publish('change', {
+    model.emit('change', {
       name: 'value'
     });
   });

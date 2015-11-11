@@ -1,7 +1,9 @@
 /*globals Request, Promise*/
 'use strict';
 import BaseClass from '../base';
-//import fetch from 'fetch';
+
+var fetch = require('fetch');
+var Promise = require('promise');
 
 /**
  * HTTP class provides an abstraction layer for HTTP calls.

@@ -44,9 +44,7 @@ export default class SimpleRouter extends BaseClass {
 
 		this._routes = [];
 		this.routes = [];
-
-
-		this.routeMap = new Map();
+		this.routeMap = {};
 
 		//Could be 'hash' or 'history' showing if we use the History API or not
 		this.mode = options.hash;
@@ -76,10 +74,7 @@ export default class SimpleRouter extends BaseClass {
 		}
 		return this;
 	}
-
-	/**
-	 * Remove the slashes from the beginning and from the end of the string.
-	 */
+	
 	clearSlashes(path) {
 		return path.toString().replace(/\/$/, '').replace(/^\//, '');
 	}

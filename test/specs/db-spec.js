@@ -30,7 +30,7 @@
  /** @test {DB} */
  describe('pxMobile.DB', function() {
 
-   var DATABASE_URL = 'http://localhost:5984/default';
+   var DATABASE_URL = '/default';
    var TEST_IDS = window.TEST_IDS = [];
 
    var sandbox = sinon.sandbox;
