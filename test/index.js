@@ -1,5 +1,5 @@
 /* global describe, it, before, expect */
-require('../src/index');
+var pxMobile = require('../dist/px-mobile');
 require('./setup');
 // TODO: This file includes all specs
 require('./specs/app-spec');
