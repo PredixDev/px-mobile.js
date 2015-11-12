@@ -254,8 +254,8 @@
         });
 
 
-        /** @test {DB#saveAttachment} */
-        it('saveAttachment(id, rev, filename, type, file) - should save file attachment',
+        /** @test {DB#saveAttachment}
+        xit('saveAttachment(id, rev, filename, type, file) - should save file attachment',
           function(done) {
             var aFileParts = ['<a id="a"><b id="b">hey!</b></a>'];
             var myBlob = new Blob(aFileParts, {
@@ -277,9 +277,9 @@
 
 
           });
-
-        /** @test {DB#getAttachment} */
-        it('getAttachment(id, filename) - should return file attachment', function(done) {
+         */
+        /** @test {DB#getAttachment}
+        xit('getAttachment(id, filename) - should return file attachment', function(done) {
           db.getAttachment(testAttachmentDoc, 'file.txt').then(function(resp) {
             assert.equal(resp.ok, true);
             db.get(testAttachmentDoc).then(function(res) {
@@ -291,7 +291,7 @@
             }, failSpec);
           }, failSpec);
         });
-
+         */
 
         describe('Changes', function() {
           var changes, changeHandlers = {};

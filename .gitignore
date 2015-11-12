@@ -8,3 +8,4 @@ coverage
 npm-debug.log
 bower_components
 docs
+.idea
