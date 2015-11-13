@@ -58,6 +58,7 @@ export default class ServiceLocator {
 
 	reset() {
 			_services = {};
+      this.services = _services;
 			return this;
 		}
 		/**

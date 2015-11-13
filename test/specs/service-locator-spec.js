@@ -1,28 +1,35 @@
-import pxMobile from '../../src/index';
+var pxMobile = require('../../src/index');
 var sinon = require('sinon');
 var assert = require('chai').assert;
 
-/** @test {ServiceLocator} */
-describe('Service Locator', function() {
-  var app, myService;
+/** @test {pxMobile.ServiceLocator} */
+describe('pxMobile.ServiceLocator', function () {
+  var services, myService;
 
-  before(function(done) {
-    app = new pxMobile.App();
+  before(function (done) {
+    services = new pxMobile.ServiceLocator();
     myService = {
-      myMethod: function() {}
+      myMethod: function () {
+      }
     };
-    app.services.register('myService', myService);
     done();
   });
 
-  it('register(name, service) - should register a service', function(done) {
-    assert.ok(app.services.register);
+  /** @test {ServiceLocator#register} */
+  it('register(name, service) - should register a service', function (done) {
+    services.register('myService', myService);
+    assert.ok(services.register);
     done();
   });
 
   /** @test {ServiceLocator#resolve} */
-  it('resolve(service) - should resolve service', function(done) {
-    assert.ok(app.services.resolve('myService').myMethod);
+  it('resolve(service) - should resolve service', function (done) {
+    assert.ok(services.resolve('myService').myMethod);
+    done();
+  });
+  /** @test {ServiceLocator#reset} */
+  it('reset() - should remove all services', function (done) {
+    assert.equal(services.services, {});
     done();
   });
 

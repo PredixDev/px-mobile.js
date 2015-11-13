@@ -1,6 +1,6 @@
 var istanbul = require('browserify-istanbul');
 // karma.conf.js
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: [
@@ -16,13 +16,13 @@ module.exports = function(config) {
       'bower_components/es6-shim/es6-shim.js',
       'bower_components/fetch/fetch.js',
 
-      //'dist/px-mobile.js',
+      'dist/px-mobile.js',
       'src/**/*.js',
       'test/**/*-spec.js'
     ],
     browsers: [
-      //'Chrome',
-      'PhantomJS'
+      'PhantomJS',
+      'Chrome'
     ],
     reporters: ['progress', 'coverage', 'spec'],
     preprocessors: {
@@ -62,10 +62,10 @@ module.exports = function(config) {
         //'brfs',
         /*istanbul({
 
-        })*/
+         })*/
       ],
-      configure: function(bundle) {
-        bundle.on('prebundle', function() {
+      configure: function (bundle) {
+        bundle.on('prebundle', function () {
           console.log('prebundle', bundle);
         });
       }
