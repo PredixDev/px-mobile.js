@@ -14,9 +14,9 @@ module.exports = function(config) {
       'node_modules/babel-core/browser-polyfill.js',
       'bower_components/es6-shim/es6-sham.js',
       'bower_components/es6-shim/es6-shim.js',
-    //  'bower_components/es6-shim/es6-sham.min.js',
       'bower_components/fetch/fetch.js',
-      'dist/px-mobile.js',
+
+      //'dist/px-mobile.js',
       'src/**/*.js',
       'test/**/*-spec.js'
     ],
@@ -26,33 +26,37 @@ module.exports = function(config) {
     ],
     reporters: ['progress', 'coverage', 'spec'],
     preprocessors: {
-      //'src/**/*.js': ['babel', 'coverage'],
       'src/**/*.js': ['browserify', 'coverage'],
-      //'src/!(*spec).js': ['babel', 'coverage'],
       'test/**/*-spec.js': ['browserify']
-      //'test/**/*-spec.js': ['babel']
     },
     specReporter: {
       // maxLogLines: 5,
-       //suppressErrorSummary: true,
-       suppressFailed: false,
-       suppressPassed: false,
-       suppressSkipped: true
-     },
+      //suppressErrorSummary: true,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: true
+    },
     coverageReporter: {
-      instrumenters: {isparta: require('isparta')},
+      instrumenters: {
+        isparta: require('isparta')
+      },
       instrumenter: {
-          'src/**/*.js': 'isparta'
+        'src/**/*.js': 'isparta'
       },
       reporters: [
-        { type: 'text' },
-        { type: 'html' }
+        {
+          type: 'text'
+        },
+        {
+          type: 'html'
+        }
       ],
       dir: 'coverage/'
     },
     browserify: {
       debug: true,
-    //  transform: ['babelify'],
+      //  standalone: 'pxMobile',
+      //  transform: ['babelify'],
       transform: [
         'babelify',
         //'brfs',
@@ -60,6 +64,11 @@ module.exports = function(config) {
 
         })*/
       ],
+      configure: function(bundle) {
+        bundle.on('prebundle', function() {
+          console.log('prebundle', bundle);
+        });
+      }
     },
     proxies: {
       '/default': 'http://localhost:4985/default',
