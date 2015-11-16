@@ -3,7 +3,7 @@ var sinon = require('sinon');
 var DATABASE_URL = 'http://localhost:5984/default';
 
 /** @test {Model} */
-describe('pxMobile.Model', function() {
+xdescribe('pxMobile.Model', function() {
   var model = null,
     id;
 
