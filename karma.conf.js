@@ -22,7 +22,8 @@ module.exports = function (config) {
       'test/**/*-spec.js'
     ],
     browsers: [
-      'PhantomJS',
+     // 'PhantomJS',
+      'Safari',
       'Chrome'
     ],
     reporters: ['progress', 'coverage', 'spec'],
@@ -67,7 +68,7 @@ module.exports = function (config) {
       ],
       configure: function (bundle) {
         bundle.on('prebundle', function () {
-          console.log('prebundle', bundle);
+          console.log('prebundle');
         });
       }
     },

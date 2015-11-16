@@ -75,7 +75,7 @@ describe('pxMobile.DB', function() {
   after(function() {
     console.warn('Cleanup docs', TEST_IDS);
     TEST_IDS.forEach(function(id) {
-      //removeDoc(id);
+      removeDoc(id);
     });
   });
 
