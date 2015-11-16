@@ -4208,7 +4208,7 @@ var Logger = (function () {
 		};
 		this.colors = defaults.colors;
 		this.options = options;
-		this.debugEnabled = options.debugEnabled || true;
+		this.debugEnabled = options.debugEnabled || false;
 		return this;
 	}
 
@@ -4247,12 +4247,17 @@ var Logger = (function () {
 			if (!params) {
 				params = {};
 			}
-			console.log('%c[%s:api] %s %o', success ? this.colors.success : this.colors.debug, this.category, method, params);
+
+			if (this.debugEnabled) {
+				console.log('%c[%s:api] %s %o', success ? this.colors.success : this.colors.debug, this.category, method, params);
+			}
 		}
 	}, {
 		key: 'logHttp',
 		value: function logHttp(method, url, success) {
-			console.log('%c[%s:http] %c%s %c%o', success ? this.colors.success : this.colors.info, this.category, null, method, null, url);
+			if (this.debugEnabled) {
+				console.log('%c[%s:http] %c%s %c%o', success ? this.colors.success : this.colors.info, this.category, null, method, null, url);
+			}
 		}
 	}, {
 		key: 'logTime',
