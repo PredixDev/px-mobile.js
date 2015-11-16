@@ -12,6 +12,7 @@
 // TODO: Core scripts
 import BaseClass from './base';
 import Core from './core/core';
+import ServiceLocator from './core/service-locator';
 import RouterHistory from './core/router-history';
 import Router from './core/router';
 import SimpleRouter from './core/simple-router';
@@ -53,12 +54,14 @@ var pxMobile = {
 	debug: true,
 	version: 'es6',
 	behaviors: {},
+
 	//Core
 	BaseClass,
 	Core,
 	SimpleRouter,
 	Router,
 	RouterHistory,
+	ServiceLocator,
 	PubSub,
 
 	//Data

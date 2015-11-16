@@ -1231,6 +1231,7 @@ var ServiceLocator = (function () {
 		key: 'reset',
 		value: function reset() {
 			_services = {};
+			this.services = _services;
 			return this;
 		}
 	}], [{
@@ -2611,6 +2612,10 @@ var _coreCore = require('./core/core');
 
 var _coreCore2 = _interopRequireDefault(_coreCore);
 
+var _coreServiceLocator = require('./core/service-locator');
+
+var _coreServiceLocator2 = _interopRequireDefault(_coreServiceLocator);
+
 var _coreRouterHistory = require('./core/router-history');
 
 var _coreRouterHistory2 = _interopRequireDefault(_coreRouterHistory);
@@ -2709,6 +2714,7 @@ var pxMobile = {
 	SimpleRouter: _coreSimpleRouter2['default'],
 	Router: _coreRouter2['default'],
 	RouterHistory: _coreRouterHistory2['default'],
+	ServiceLocator: _coreServiceLocator2['default'],
 	PubSub: _corePubsub2['default'],
 
 	Collection: _dsCollection2['default'],
@@ -2746,7 +2752,7 @@ var pxMobile = {
 
 exports['default'] = pxMobile;
 module.exports = exports['default'];
-},{"./base":1,"./core/app":2,"./core/core":3,"./core/pubsub":4,"./core/router":6,"./core/router-history":5,"./core/simple-router":8,"./ds/collection":9,"./ds/db":10,"./ds/http":11,"./ds/model":12,"./elements/pm-page":13,"./ui/component":15,"./ui/element":16,"./ui/elements":17,"./ui/page":18,"./ui/pages":19,"./ui/view":20,"./ui/views":21,"./utils/dom":22,"./utils/interface":23,"./utils/interfaces":24,"./utils/log":25,"./utils/utils":26}],15:[function(require,module,exports){
+},{"./base":1,"./core/app":2,"./core/core":3,"./core/pubsub":4,"./core/router":6,"./core/router-history":5,"./core/service-locator":7,"./core/simple-router":8,"./ds/collection":9,"./ds/db":10,"./ds/http":11,"./ds/model":12,"./elements/pm-page":13,"./ui/component":15,"./ui/element":16,"./ui/elements":17,"./ui/page":18,"./ui/pages":19,"./ui/view":20,"./ui/views":21,"./utils/dom":22,"./utils/interface":23,"./utils/interfaces":24,"./utils/log":25,"./utils/utils":26}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
