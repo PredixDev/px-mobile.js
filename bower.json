@@ -2,8 +2,8 @@
   "_id": "px-mobile-js",
   "name": "px-mobile.js",
   "files": [
-    "./src/**/*"
-    "./test/**/*"
+    "./src/**/*",
+    "./test/**/*",
     "./dist/**/*"
   ],
   "main": "test/index.html",
