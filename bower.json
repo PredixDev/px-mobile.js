@@ -1,14 +1,12 @@
 {
-  "_id": "px-mobile.js",
+  "_id": "px-mobile-js",
   "name": "px-mobile.js",
   "files": [
-    "./dist/**/*.*"
+    "./src/**/*"
+    "./test/**/*"
+    "./dist/**/*"
   ],
-  "main": [
-    "px-mobile.html",
-    "src/js/main.js",
-    "src/scss/main.scss"
-  ],
+  "main": "test/index.html",
   "version": "0.0.1",
   "authors": [
     "Jonnie Spratley <jonnie.spratley@ge.com>"

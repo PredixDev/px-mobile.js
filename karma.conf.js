@@ -4,7 +4,7 @@ module.exports = function(config) {
   config.set({
     basePath: '',
     frameworks: [
-      //'es6-shim',
+      'es6-shim',
       'browserify',
       'mocha',
       'chai',
@@ -12,8 +12,8 @@ module.exports = function(config) {
     ],
     files: [
       'node_modules/babel-core/browser-polyfill.js',
-      'bower_components/es6-shim/es6-sham.js',
-      'bower_components/es6-shim/es6-shim.js',
+      //'bower_components/es6-shim/es6-sham.js',
+      //'bower_components/es6-shim/es6-shim.js',
     //  'bower_components/es6-shim/es6-sham.min.js',
       'bower_components/fetch/fetch.js',
       'dist/px-mobile.js',
