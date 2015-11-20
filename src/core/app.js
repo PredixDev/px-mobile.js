@@ -1,4 +1,4 @@
-import Core from '../core/core';
+import BaseClass from '../base';
 //import Router from './router';
 import ServiceLocator from '../core/service-locator';
 let _instance = null;
@@ -26,7 +26,7 @@ let _instance = null;
  * app.services.register('http', http);
  * app.services.register('pubsub', pubsub);
  */
-export default class App extends Core {
+export default class App extends BaseClass {
 
 	/**
 	 * Return the ServiceLocator _instance.
