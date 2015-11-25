@@ -1,4 +1,3 @@
-import pxMobile from '../../src/index';
 
 
 /** @test {DOM} */

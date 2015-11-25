@@ -43,13 +43,13 @@
       return done();
     };
     mocha.setup('bdd');
-    //mocha.checkLeaks();
+    mocha.checkLeaks();
 
     </script>
 
     <!-- Specs-->
     <script src="specs.js"></script>
-<!--
+
     <script src="specs/db-spec.js"></script>
 
     <script src="specs/app-spec.js"></script>
@@ -71,7 +71,7 @@
     <script src="specs/utils-spec.js"></script>
     <script src="specs/view-spec.js"></script>
     <script src="specs/views-spec.js"></script>
--->
+
     <script type="text/javascript">
     mocha.globals([
       'jQuery',

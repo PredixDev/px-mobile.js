@@ -1,5 +1,3 @@
-import pxMobile from '../../src/index';
-var sinon = require('sinon');
 
  /** @test {Page} */
  describe('pxMobile.Page', function() {

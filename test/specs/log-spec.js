@@ -1,5 +1,4 @@
-import pxMobile from '../../src/index';
-var sinon = require('sinon');
+
 /** @test {Logger} */
 describe('pxMobile.Logger', function() {
   it('should be defined', function() {

@@ -164,9 +164,9 @@ function _inherits(subClass, superClass) {
 	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
-var _coreCore = require('../core/core');
+var _base = require('../base');
 
-var _coreCore2 = _interopRequireDefault(_coreCore);
+var _base2 = _interopRequireDefault(_base);
 
 var _coreServiceLocator = require('../core/service-locator');
 
@@ -174,8 +174,8 @@ var _coreServiceLocator2 = _interopRequireDefault(_coreServiceLocator);
 
 var _instance = null;
 
-var App = (function (_Core) {
-	_inherits(App, _Core);
+var App = (function (_BaseClass) {
+	_inherits(App, _BaseClass);
 
 	_createClass(App, null, [{
 		key: 'getInstance',
@@ -316,11 +316,11 @@ var App = (function (_Core) {
 	}]);
 
 	return App;
-})(_coreCore2['default']);
+})(_base2['default']);
 
 exports['default'] = App;
 module.exports = exports['default'];
-},{"../core/core":3,"../core/service-locator":7}],3:[function(require,module,exports){
+},{"../base":1,"../core/service-locator":7}],3:[function(require,module,exports){
 'use strict';
 Object.defineProperty(exports, '__esModule', {
 	value: true
@@ -1383,6 +1383,11 @@ var SimpleRouter = (function (_BaseClass) {
 				handler: handler
 			});
 			this.on(re, handler);
+
+			this.routes[re] = {
+				re: re,
+				handler: handler
+			};
 
 			return this;
 		}

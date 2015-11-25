@@ -1,5 +1,5 @@
-import pxMobile from '../../src/index';
- 
+
+
  /** @test {Collection} */
  describe('pxMobile.Collection', function() {
    var collection = null;

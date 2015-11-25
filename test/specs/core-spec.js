@@ -1,4 +1,3 @@
-import pxMobile from '../../src/index';
 
  /** @test {Core} */
  describe('pxMobile.Core', function() {

@@ -1,6 +1,4 @@
-import pxMobile from '../../src/index';
-var sinon = require('sinon');
-var assert = require('chai').assert;
+ 
  /** @test {Views} */
  describe('pxMobile.Views', function() {
    it('should be defined', function() {

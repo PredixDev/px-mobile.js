@@ -1,9 +1,7 @@
-var pxMobile = require('../../src/index');
-var sinon = require('sinon');
-var assert = require('chai').assert;
+
 
 /** @test {pxMobile.ServiceLocator} */
-xdescribe('pxMobile.ServiceLocator', function () {
+describe('pxMobile.ServiceLocator', function () {
   var services, myService;
 
   before(function (done) {

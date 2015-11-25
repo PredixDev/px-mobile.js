@@ -42,7 +42,7 @@ var assert = require('chai').assert;
      done();
    });
 
-   xit('on(route, cb) - invokes route when matched', function(done) {
+   it('on(route, cb) - invokes route when matched', function(done) {
      myRouter.on('/about', function(req, res) {
        expect(req).toBeDefined();
        expect(res).toBeDefined();
@@ -52,7 +52,7 @@ var assert = require('chai').assert;
    });
 
 
-   xit('on("/users/:action/:id", callback) - should invoke callback if route matches', function(done) {
+   it('on("/users/:action/:id", callback) - should invoke callback if route matches', function(done) {
      myRouter.on('/users/:action/:id', function(req, res) {
        console.warn('callback', req, res);
        expect(req).toBeDefined();
@@ -70,7 +70,7 @@ var assert = require('chai').assert;
    });
 
 
-   xit('when(route) - should resolve promise when hash matches', function(done) {
+   it('when(route) - should resolve promise when hash matches', function(done) {
      app.services.resolve('router').when('/posts').then(function(req, res) {
        expect(res).toBeDefined();
        expect(req).toBeDefined();
@@ -81,7 +81,7 @@ var assert = require('chai').assert;
 
 
 
-   xit('should resolve route once resolve property is resolved', function(done) {
+   it('should resolve route once resolve property is resolved', function(done) {
      app.services.register('router', new pxMobile.Router('default', {
        routes: {
          '/login': {

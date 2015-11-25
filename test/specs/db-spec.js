@@ -1,4 +1,3 @@
-import pxMobile from '../../src/index';
 
 function failSpec(done) {
   assert.fail();

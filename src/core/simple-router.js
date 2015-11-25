@@ -112,12 +112,12 @@ export default class SimpleRouter extends BaseClass {
 			});
 			this.on(re, handler);
 
-			/*
+
 						this.routes[re] = {
 							re: re,
 							handler: handler
 						};
-						*/
+
 			return this;
 		}
 		/**

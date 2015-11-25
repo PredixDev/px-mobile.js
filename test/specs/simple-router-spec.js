@@ -1,6 +1,4 @@
-import pxMobile from '../../src/index';
-var sinon = require('sinon');
-var assert = require('chai').assert;
+ 
 
 /*global sinon, before*/
 describe('Simple Router', function() {
