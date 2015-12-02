@@ -11,6 +11,30 @@ import BaseClass from '../base';
  * var $http = new px.mobile.HTTP('http1', {
  *	baseUrl: window.location.origin
  * });
+ General usage
+The $http service is a function which takes a single argument — a configuration object — that is used to generate an HTTP request and returns a promise.
+
+// Simple GET request example:
+$http({
+  method: 'GET',
+  url: '/someUrl'
+}).then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+The response object has these properties:
+
+data – {string|Object} – The response body transformed with the transform functions.
+status – {number} – HTTP status code of the response.
+headers – {function([headerName])} – Header getter function.
+config – {Object} – The configuration object that was used to generate the request.
+statusText – {string} – HTTP status text of the response.
+A response status code between 200 and 299 is considered a success status and will result in the success callback being called. Note that if the response is a redirect, XMLHttpRequest will transparently follow it, meaning that the error callback will not be called for such responses.
+
+
  */
 export default class HTTP extends BaseClass {
 
