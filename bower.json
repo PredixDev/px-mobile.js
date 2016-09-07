@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.build.ge.com/predix-mobile/px-mobile.js.git"
+    "url": "https://github.com/predixdev/px-mobile.js.git"
   },
   "description": "A suite of modules for usage in a Predix Mobile application.",
   "moduleType": [
